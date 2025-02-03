@@ -1,0 +1,56 @@
+body{
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+}
+
+.SideHeader{
+    background-color: #AF0000;
+    width: 6vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main{
+    width: 94vw;
+    height: 100vh;
+    background-color: #209E20;
+}
+
+.top{
+    padding-top: 70px;
+    width: 56%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bottom{
+    padding-bottom: 10px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.sword{
+    
+}
+
+.leaderboard{
+    
+}
+
+.home{
+    width: 70%;
+}
+
+
+.title{
+    
+}
