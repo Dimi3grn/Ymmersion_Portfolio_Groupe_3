@@ -1,13 +1,14 @@
-.main{
-    margin-left: 6vw;
-    width: 94vw;
-    height: 200vh;
-    background-color: #209E20;
+/* Style global */
+body {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
 }
-.SideHeader{
+
+/* Barre latérale */
+.SideHeader {
     background-color: #AF0000;
     width: 6vw;
     height: 100vh;
@@ -15,8 +16,105 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: width 0.3s ease-in-out;
 }
 
-.SideHeader:hover{
+.SideHeader:hover {
     width: 20vw;
+}
+
+.SideHeader .top, .SideHeader .bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.SideHeader img {
+    width: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.SideHeader img:hover {
+    transform: scale(1.2);
+}
+
+/* Section principale */
+.main {
+    margin-left: 6vw;
+    width: 94vw;
+    background-color: #209E20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.title {
+    margin-top: 50px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
+.paragraphe {
+    margin-top: 20px;
+    width: 80%;
+    background-color: #0000FF;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* Images spécifiques */
+img.sword, img.leaderboard, img.home {
+    width: 50px;
+}
+
+/* Animation globale */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    font-size: initial;
+    font-weight: normal;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    .SideHeader {
+        width: 12vw;
+    }
+    .SideHeader:hover {
+        width: 18vw;
+    }
+    .main {
+        margin-left: 12vw;
+        width: 88vw;
+    }
+    .title {
+        font-size: 1.5rem;
+    }
+    .paragraphe {
+        font-size: 1rem;
+    }
 }
