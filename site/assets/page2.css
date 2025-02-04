@@ -40,6 +40,7 @@ body{
     z-index: 1;
     position: relative;
     justify-content: center
+    
 }
 
 .top{
@@ -67,7 +68,6 @@ body{
     background-color: #6aaf50; /* Vert Creeper */
     border-radius: 5px; /* Coins légèrement arrondis */
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Ombre douce */
-    z-index: 100;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -94,3 +94,12 @@ body{
 .mouth-top-right { top: 100px; right: 40px; }
 .mouth-bottom-left { top: 140px; left: 40px; }
 .mouth-bottom-right { top: 140px; right: 40px; }
+
+h2 {
+    font-size: 2em;
+    color: #000;
+    text-align: center;
+    margin-bottom: 20px;    
+    position: absolute;
+    top: 25%;
+}
