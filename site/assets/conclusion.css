@@ -80,7 +80,7 @@ body {
     margin-top: 20px;
     width: 80%; /* Largeur relative */
     background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff); /* Dégradé arc-en-ciel */
-    color: white; /* Couleur du texte */
+    color: black; /* Couleur du texte */
     padding: 20px; /* Espacement interne */
     border-radius: 10px; /* Coins arrondis */
     text-align: center; /* Centrage du texte */
