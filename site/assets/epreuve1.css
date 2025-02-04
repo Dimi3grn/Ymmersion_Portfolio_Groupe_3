@@ -72,27 +72,14 @@ body {
     text-align: center;
 }
 
-
+/*Epreuve 1*/
 .title h1 {
     font-size: 50px; /* Taille responsive */
     color: #FFF;
 }
 
-.title h2 {
-    font-size: clamp(1rem, 2vw, 1.5rem);
-    color: transparent;
-    background-image: linear-gradient(90deg, 
-        red, orange, yellow, green, cyan, blue, violet);
-    background-size: 300% 100%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    animation: rainbow 3s linear infinite;
-}
 
-@keyframes rainbow {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
-}
+
 
 
 /* Optimisation responsive */
@@ -109,7 +96,59 @@ body {
         margin-left: 60px;
     }
 }
-
+/* Icone maison */
 .home{
     width: 70%;
 }
+
+/* Creeper.css */
+.creeper {
+    width: 200px;
+    height: 200px;
+    background-color: #6aaf50; /* Vert Creeper */
+    border-radius: 5px; /* Coins légèrement arrondis */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Ombre douce */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pixel {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: black;
+}
+
+/* Yeux */
+.eye-left { top: 40px; left: 40px; }
+.eye-right { top: 40px; right: 40px; }
+
+/* Nez (allongé vers le bas) */
+.nose-top { top: 80px; left: 80px; }
+.nose-bottom { top: 120px; left: 80px; }
+
+/* Bouche */
+.mouth-top-left { top: 100px; left: 40px; }
+.mouth-top-right { top: 100px; right: 40px; }
+.mouth-bottom-left { top: 140px; left: 40px; }
+.mouth-bottom-right { top: 140px; right: 40px; }
+
+/* Conteneur de consigne */
+.container-description {
+    width: 90%;
+    height: 100px;
+    background:linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff); /* Dégradé arc-en-ciel */
+    color: black;
+    position: absolute;
+    top: 80%;
+    margin-top: 20px;
+    padding: 20px; /* Espacement interne */
+    border-radius: 10px; /* Coins arrondis */
+    text-align: center; /* Centrage du texte */
+    font-size: 1.2rem; /* Taille du texte */
+    font-weight: 500;
+}
+
+    
