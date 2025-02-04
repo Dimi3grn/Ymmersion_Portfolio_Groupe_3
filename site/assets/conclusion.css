@@ -128,8 +128,18 @@ p {
     position: fixed;
     pointer-events: none;
     transition: transform 0.1s ease-in-out;
-    width: 120px;  /* Largeur spécifique */
+    width: 300px;  /* Largeur spécifique */
     height: 80px;  /* Hauteur spécifique */
+}
+/* Style de l'image animée */
+#confettiImage {
+    position: fixed;
+    top: 50%;   /* Position verticale centrée */
+    left: 50%;  /* Position horizontale centrée */
+    transform: translate(-50%, -50%);  /* Centrage exact */
+    z-index: 1000; /* Assure que l'image est devant les autres éléments */
+    display: none; /* Masquée par défaut */
+    width: 1000px;  /* Largeur de l'image */
 }
 
 

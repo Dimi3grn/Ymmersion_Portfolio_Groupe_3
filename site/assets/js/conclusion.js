@@ -11,3 +11,20 @@ document.addEventListener('mousemove', (event) => {
     nyanCat.style.left = `${mouseX - nyanCat.width / 2}px`;  // Ajuste la position X
     nyanCat.style.top = `${mouseY - nyanCat.height / 2}px`;  // Ajuste la position Y
 });
+document.addEventListener('click', () => {
+    // Crée un élément img pour l'animation
+    const confettiImage = document.createElement('img');
+    confettiImage.src = 'assets/img/confettis-fun.gif';  // Chemin relatif vers l'image animée
+    confettiImage.id = 'confettiImage';  // Ajoute un ID pour pouvoir le styliser
+
+    // Ajoute l'image au body de la page
+    document.body.appendChild(confettiImage);
+
+    // Affiche l'image (elle est cachée par défaut avec display: none)
+    confettiImage.style.display = 'block';
+
+    // Facultatif : Supprimer l'image après un certain temps (ex. 5 secondes)
+    setTimeout(() => {
+        confettiImage.remove();
+    }, 1000);  // L'image disparaît après 5 secondes
+});
