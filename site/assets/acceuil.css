@@ -275,7 +275,7 @@ p {
     position: absolute;
     width: 200px; /* Adjust size */
     height: auto;
-    transition: transform 1s ease-in-out; /* Smooth movement */
+    transition: transform 1s ease-in-out;
 }
 
 @keyframes fall {
