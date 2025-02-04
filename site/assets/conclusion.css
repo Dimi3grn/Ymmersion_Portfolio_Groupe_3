@@ -1,17 +1,21 @@
-/* Style global */
+/* ============================
+   Style global
+============================ */
 body {
     display: flex;
     flex-direction: row;
     padding: 0;
     margin: 0;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', sans-serif; /* Police principale */
 }
 
-/* Barre latérale */
+/* ============================
+   Barre latérale
+============================ */
 .SideHeader {
-    background-color: #AF0000;
-    width: 6vw;
-    height: 100vh;
+    background-color: #AF0000; /* Couleur de fond rouge */
+    width: 6vw; /* Largeur initiale */
+    height: 100vh; /* Hauteur de la fenêtre */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,67 +23,83 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out; /* Transition lors du survol */
 }
 
+/* Effet au survol de la barre latérale */
 .SideHeader:hover {
-    width: 20vw;
+    width: 20vw; /* Largeur étendue */
 }
 
-.SideHeader .top, .SideHeader .bottom {
+/* Contenu supérieur et inférieur de la barre latérale */
+.SideHeader .top, 
+.SideHeader .bottom {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 20px; /* Espacement entre les icônes */
     padding: 20px 0;
 }
 
+/* Icônes de la barre latérale */
 .SideHeader img {
-    width: 50%;
-    transition: transform 0.3s ease-in-out;
+    width: 50%; /* Taille des icônes */
+    transition: transform 0.3s ease-in-out; /* Animation au survol */
 }
 
+/* Effet de zoom au survol des icônes */
 .SideHeader img:hover {
     transform: scale(1.2);
 }
 
-/* Section principale */
+/* ============================
+   Section principale
+============================ */
 .main {
-    margin-left: 6vw;
-    width: 94vw;
-    background-color: #209E20;
+    margin-left: 6vw; /* Décalage pour la barre latérale */
+    width: 94vw; /* Largeur restante */
+    background-color: #209E20; /* Couleur de fond verte */
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 20px; /* Espacement interne */
 }
 
+/* Titre principal */
 .title {
-    margin-top: 50px;
-    font-size: 2rem;
+    margin-top: 50px; /* Marges pour espacer le haut */
+    font-size: 2rem; /* Taille du texte */
     font-weight: bold;
     text-align: center;
-    color: white;
+    color: white; /* Couleur du texte */
 }
 
+/* Paragraphe de contenu */
 .paragraphe {
     margin-top: 20px;
-    width: 80%;
-    background-color: #0000FF;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    font-size: 1.2rem;
+    width: 80%; /* Largeur relative */
+    background-color: #0000FF; /* Couleur de fond bleue */
+    color: white; /* Couleur du texte */
+    padding: 20px; /* Espacement interne */
+    border-radius: 10px; /* Coins arrondis */
+    text-align: center; /* Centrage du texte */
+    font-size: 1.2rem; /* Taille du texte */
     font-weight: 500;
 }
 
-/* Images spécifiques */
-img.sword, img.leaderboard, img.home {
-    width: 50px;
+/* ============================
+   Images spécifiques
+============================ */
+img.sword, 
+img.leaderboard, 
+img.home {
+    width: 50px; /* Taille spécifique des icônes */
 }
 
-/* Animation globale */
+/* ============================
+   Animation
+============================ */
+/* Animation de "pulse" pour ajouter un effet de pulsation */
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -92,6 +112,9 @@ img.sword, img.leaderboard, img.home {
     }
 }
 
+/* ============================
+   Règles par défaut pour les <p>
+============================ */
 p {
     margin: 0;
     padding: 0;
@@ -99,22 +122,25 @@ p {
     font-weight: normal;
 }
 
-/* Responsivité */
+/* ============================
+   Responsivité
+============================ */
+/* Adaptation pour les écrans plus petits */
 @media (max-width: 768px) {
     .SideHeader {
-        width: 12vw;
+        width: 12vw; /* Réduction de la largeur */
     }
     .SideHeader:hover {
-        width: 18vw;
+        width: 18vw; /* Largeur étendue au survol */
     }
     .main {
-        margin-left: 12vw;
-        width: 88vw;
+        margin-left: 12vw; /* Ajustement de la marge gauche */
+        width: 88vw; /* Réduction de la largeur */
     }
     .title {
-        font-size: 1.5rem;
+        font-size: 1.5rem; /* Réduction de la taille du titre */
     }
     .paragraphe {
-        font-size: 1rem;
+        font-size: 1rem; /* Réduction de la taille du texte */
     }
 }
