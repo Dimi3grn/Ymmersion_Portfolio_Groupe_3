@@ -141,6 +141,16 @@ p {
     display: none; /* Masquée par défaut */
     width: 1000px;  /* Largeur de l'image */
 }
+#movingImage {
+    position: absolute;
+    width: 100px; /* Ajuste la taille si nécessaire */
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
 
 
 

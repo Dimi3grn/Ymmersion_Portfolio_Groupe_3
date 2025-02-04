@@ -28,3 +28,21 @@ document.addEventListener('click', () => {
         confettiImage.remove();
     }, 1000);  // L'image disparaît après 5 secondes
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const movingImage = document.getElementById('movingImage');
+
+    function moveRandomly() {
+        const maxX = window.innerWidth - movingImage.clientWidth;
+        const maxY = window.innerHeight - movingImage.clientHeight;
+
+        const randomX = Math.random() * maxX;
+        const randomY = Math.random() * maxY;
+
+        movingImage.style.left = `${randomX}px`;
+        movingImage.style.top = `${randomY}px`;
+    }
+
+    // Déplace l'image toutes les 2 secondes
+    setInterval(moveRandomly, 2000);
+});
+
