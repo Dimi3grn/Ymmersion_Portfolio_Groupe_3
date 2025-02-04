@@ -1,0 +1,96 @@
+body{
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e0e0e0; /* Fond gris clair */
+}
+/* Menu.css */
+.fixed{
+    position: fixed;
+    top: 0  ;
+    left: 0;
+}
+
+.SideHeader{
+    background-color: #AF0000;
+    width: 6vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.SideHeader:hover{
+    width: 20vw;
+}
+
+.main{
+    margin-left: 6vw;
+    width: 94vw;
+    height: 200vh;
+    background-color: #209E20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+    justify-content: center
+}
+
+.top{
+    padding-top: 70px;
+    width: 56%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bottom{
+    padding-bottom: 10px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.home{
+    width: 70%;
+}
+/* Creeper.css */
+.creeper {
+    width: 200px;
+    height: 200px;
+    background-color: #6aaf50; /* Vert Creeper */
+    border-radius: 5px; /* Coins légèrement arrondis */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Ombre douce */
+    z-index: 100;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pixel {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: black;
+}
+
+/* Yeux */
+.eye-left { top: 40px; left: 40px; }
+.eye-right { top: 40px; right: 40px; }
+
+/* Nez (allongé vers le bas) */
+.nose-top { top: 80px; left: 80px; }
+.nose-bottom { top: 120px; left: 80px; }
+
+/* Bouche */
+.mouth-top-left { top: 100px; left: 40px; }
+.mouth-top-right { top: 100px; right: 40px; }
+.mouth-bottom-left { top: 140px; left: 40px; }
+.mouth-bottom-right { top: 140px; right: 40px; }
