@@ -11,9 +11,16 @@ body{
     left: 0;
 }
 
+.SideDiv{
+    background-color: #AF0000;
+    width: 4vw;
+    height: 100vh;
+   
+}
+
 .SideHeader{
     background-color: #AF0000;
-    width: 6vw;
+    width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -21,13 +28,67 @@ body{
     justify-content: space-between;
 }
 
-.SideHeader:hover{
-    width: 20vw;
+.SideDiv span {
+    display: none;
+    white-space: nowrap; /* Prevents text from wrapping */
 }
 
+.SideDiv:hover span{
+    display: inline;
+}
+
+.SideDiv:hover{
+    width: 8vw;
+}
+
+.SideDiv:hover .bottom{
+    align-self: flex-start;
+}
+
+.SideHeader ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.SideHeader li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.SideHeader a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    width: 100%;
+}
+
+.SideHeader img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Masquer le texte par défaut */
+.SideHeader span {
+    display: none;
+    white-space: nowrap;
+    font-size: 16px;
+}
+
+/* Afficher le texte lorsque le menu est élargi */
+.SideDiv:hover .SideHeader span {
+    display: inline;
+}
+
+
+
 .main{
-    margin-left: 6vw;
-    width: 94vw;
+    margin-left: 4vw;
+    width: 96vw;
     height: 200vh;
     background-color: #209E20;
     display: flex;
@@ -41,6 +102,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .bottom{
@@ -283,3 +345,37 @@ p {
     background-color: purple;
 }
 
+.unicorn {
+    position: absolute;
+    width: 200px; /* Adjust size */
+    height: auto;
+    transition: transform 1s ease-in-out; /* Smooth movement */
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+        
+    }
+    100% {
+        transform: translateY(120vh);
+        
+    }
+}
+
+.fall {
+    animation: fall 1s ease-in-out forwards;
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(120vh); /* Elles partent de tout en bas */
+    }
+    100% {
+        transform: translateY(0); /* Elles reviennent à leur position */
+    }
+}
+
+.rise {
+    animation: rise 1s ease-out forwards;
+}
