@@ -25,17 +25,3 @@ document.addEventListener('click', function (e) {
         confettiImage.style.display = 'none';
     }, 2000);
 });
-
-// Crée l'élément du fake cursor
-const fakeCursor = document.createElement("div");
-fakeCursor.id = "fakeCursor";
-document.body.appendChild(fakeCursor);
-
-// Masquer le vrai curseur (forcer avec !important)
-document.body.style.cssText += "cursor: none !important;";
-
-// Suivi de la souris
-document.addEventListener("mousemove", (e) => {
-    fakeCursor.style.left = `${e.pageX}px`;
-    fakeCursor.style.top = `${e.pageY}px`;
-});

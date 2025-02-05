@@ -188,7 +188,7 @@ img.home {
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
-    color: white;
+    color: black;
 }
 
 /* Paragraphe de contenu */
@@ -231,17 +231,7 @@ img.home {
     display: none; /* L'image est cachée par défaut */
     width: 300px;  /* Ajustez la taille de l'image si nécessaire */
     height: 300px;
-    transition: transform 0.5s ease-in-out; /* Pour une animation douce */
-}
-#fakeCursor {
-    width: 50px; /* Taille ajustable */
-    height: 50px;
-    background-image: url('./assets/img/nyan_cat.gif'); /* Image du curseur */
-    background-size: cover;
-    position: absolute;
-    pointer-events: none; /* Ne bloque pas les interactions */
-    z-index: 1000; /* Juste au-dessus des autres éléments, mais pas trop */
-    transform: translate(-50%, -50%); /* Centre le curseur */
+    transition: transform 1s ease-in-out; /* Pour une animation douce */
 }
 body {
     position: relative; /* Permet aux éléments absolus d’être bien positionnés */
