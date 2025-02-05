@@ -226,24 +226,29 @@ img.home {
 ============================ */
 
 
-#movingImage {
-    position: absolute;
-    width: 100px;
-    height: auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-}
+
 #confettiImage {
     display: none; /* L'image est cachée par défaut */
     width: 300px;  /* Ajustez la taille de l'image si nécessaire */
     height: 300px;
     transition: transform 0.5s ease-in-out; /* Pour une animation douce */
 }
-body {
-    cursor: none; /* Cache le curseur de la souris */
+#fakeCursor {
+    width: 50px; /* Taille ajustable */
+    height: 50px;
+    background-image: url('./assets/img/nyan_cat.gif'); /* Image du curseur */
+    background-size: cover;
+    position: absolute;
+    pointer-events: none; /* Ne bloque pas les interactions */
+    z-index: 1000; /* Juste au-dessus des autres éléments, mais pas trop */
+    transform: translate(-50%, -50%); /* Centre le curseur */
 }
+body {
+    position: relative; /* Permet aux éléments absolus d’être bien positionnés */
+}
+
+
+
 
 
 /* ============================ 
