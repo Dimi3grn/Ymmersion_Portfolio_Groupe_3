@@ -9,58 +9,29 @@ body {
     min-height: 100vh; /* Mieux que height: 100vh pour éviter les bugs sur mobile */
 }
 
-/* Correction de la déclaration .fixed */
-.fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-}
 
-/* Sidebar améliorée */
-.SideHeader {
-    background-color: #AF0000;
-    width: 6vw;
-    min-width: 60px; /* Évite un rétrécissement excessif */
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    transition: width 0.3s ease; /* Animation fluide */
-}
 
-.SideHeader:hover {
-    width: 20vw;
-}
+
+
 
 /* Contenu principal */
 .main {
-    margin-left: 6vw;
+    margin-left: 4vw;
     flex-grow: 1; /* Prend tout l'espace disponible */
     min-height: 100vh;
-    background-color: #209E20;
+    background: url('img/fondmc.png') repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
     transition: margin-left 0.3s ease; /* Synchronisé avec la sidebar */
+    z-index: -1;
 }
 
 /* Adaptation responsive du contenu */
-.top {
-    padding-top: 5vh; /* Utilisation d'unités relatives */
-    width: 90%;
-    max-width: 800px; /* Limite la largeur sur grands écrans */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
 
-.bottom {
-    padding: 20px 0;
-    width: 90%;
-    margin-top: auto; /* Colle en bas */
-}
+
+
 
 /* Typographie */
 .title {
@@ -103,11 +74,11 @@ body {
 
 /* Creeper.css */
 .creeper {
-    width: 200px;
-    height: 200px;
-    background-color: #6aaf50; /* Vert Creeper */
-    border-radius: 5px; /* Coins légèrement arrondis */
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Ombre douce */
+    width: 300px; /* 200px * 1.5 */
+    height: 300px; /* 200px * 1.5 */
+    background-color: #6aaf50;
+    border-radius: 7.5px; /* 5px * 1.5 */
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.2); /* 4px*1.5 et 10px*1.5 */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -116,24 +87,24 @@ body {
 
 .pixel {
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: 60px; /* 40px * 1.5 */
+    height: 60px; /* 40px * 1.5 */
     background-color: black;
 }
 
 /* Yeux */
-.eye-left { top: 40px; left: 40px; }
-.eye-right { top: 40px; right: 40px; }
+.eye-left { top: 60px; left: 60px; } /* 40px * 1.5 */
+.eye-right { top: 60px; right: 60px; } /* 40px * 1.5 */
 
-/* Nez (allongé vers le bas) */
-.nose-top { top: 80px; left: 80px; }
-.nose-bottom { top: 120px; left: 80px; }
+/* Nez */
+.nose-top { top: 120px; left: 120px; } /* 80px * 1.5 */
+.nose-bottom { top: 180px; left: 120px; } /* 120px * 1.5 */
 
 /* Bouche */
-.mouth-top-left { top: 100px; left: 40px; }
-.mouth-top-right { top: 100px; right: 40px; }
-.mouth-bottom-left { top: 140px; left: 40px; }
-.mouth-bottom-right { top: 140px; right: 40px; }
+.mouth-top-left { top: 150px; left: 60px; } /* 100px * 1.5 */
+.mouth-top-right { top: 150px; right: 60px; } /* 100px * 1.5 */
+.mouth-bottom-left { top: 210px; left: 60px; } /* 140px * 1.5 */
+.mouth-bottom-right { top: 210px; right: 60px; } /* 140px * 1.5 */
 
 /* Conteneur de consigne */
 .container-description {
@@ -151,4 +122,78 @@ body {
     font-weight: 500;
 }
 
-    
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.fixed {
+    position: fixed;
+    height: 100vh;
+    width: 4vw;
+    background-color: #AF0000;
+    transition: width 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.sidebar {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.top{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 3vh;
+}
+
+.svgcont {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    white-space: nowrap;
+}
+
+.svgcont img {
+    margin-left: 15px;
+    height: 30px;
+    width: 30px;
+}
+
+/* Cacher le texte par défaut */
+.svgcont span {
+    color: black;
+    font-size: 1rem;
+    margin-left: 10px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Effet au survol */
+.fixed:hover {
+    width: 10vw; /* Augmenté à 10vw */
+}
+
+.fixed:hover .svgcont span {
+    opacity: 1;
+    transform: translateX(0);
+}
