@@ -11,22 +11,25 @@ document.addEventListener('mousemove', (event) => {
     nyanCat.style.left = `${mouseX - nyanCat.width / 2}px`;  // Ajuste la position X
     nyanCat.style.top = `${mouseY - nyanCat.height / 2}px`;  // Ajuste la position Y
 });
-document.addEventListener('click', () => {
-    // Crée un élément img pour l'animation
-    const confettiImage = document.createElement('img');
-    confettiImage.src = 'assets/img/confettis-fun.gif';  // Chemin relatif vers l'image animée
-    confettiImage.id = 'confettiImage';  // Ajoute un ID pour pouvoir le styliser
+// Détecter le clic sur la page
+document.addEventListener('click', function(e) {
+    var confettiImage = document.getElementById('confettiImage');
 
-    // Ajoute l'image au body de la page
-    document.body.appendChild(confettiImage);
+    // Positionner l'image là où le clic a eu lieu
+    var x = e.pageX;
+    var y = e.pageY;
 
-    // Affiche l'image (elle est cachée par défaut avec display: none)
+    // Définir la position de l'image animée
+    confettiImage.style.left = (x - confettiImage.width / 2) + 'px';  // Centrer l'image sur le clic
+    confettiImage.style.top = (y - confettiImage.height / 2) + 'px';
+
+    // Afficher l'image
     confettiImage.style.display = 'block';
 
-    // Facultatif : Supprimer l'image après un certain temps (ex. 5 secondes)
-    setTimeout(() => {
-        confettiImage.remove();
-    }, 1000);  // L'image disparaît après 5 secondes
+    // Masquer l'image après un délai (par exemple 2 secondes)
+    setTimeout(function() {
+        confettiImage.style.display = 'none';
+    }, 2000);  // L'image disparaît après 2 secondes
 });
 document.addEventListener('DOMContentLoaded', () => {
     const movingImage = document.getElementById('movingImage');

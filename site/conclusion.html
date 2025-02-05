@@ -1,55 +1,110 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conclusion</title>
-    <!-- Lien vers le fichier CSS -->
+    <link rel="stylesheet" href="./assets/sidebar.css">
     <link rel="stylesheet" href="./assets/conclusion.css">
 </head>
 <body>
-    <!-- Section principale -->
+
+    <!-- Le conteneur pour l'image animée de confettis -->
+    <img id="confettiImage" src="assets/img/confettis-fun.gif" style="display:none; position: absolute; z-index: 1000;">
+
+    <!-- Image animée de neige (le logo chinois qui rebondit) -->
+    <img id="chineseSnowImage" src="assets/img/Chinois_neige.gif" style="display:none; position: absolute; z-index: 1000;">
+
+    <div class="fixed">
+        <nav class="sidebar">
+            <div class="top">
+                <div class="svgcont">
+                    <img src="./assets/svg/sword-fill-svgrepo-com.svg" alt="logo">
+                    <span>Epreuves</span>
+                </div>
+                <div class="svgcont">
+                    <img src="./assets/svg/leaderboard-star-svgrepo-com.svg" alt="">
+                    <span>Classement</span>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="svgcont">
+                    <img src="./assets/svg/home-icon-silhouette-svgrepo-com (1).svg" alt="">
+                    <span>Accueil</span>
+                </div>
+            </div>
+        </nav>
+    </div>
+
     <div class="main">
-        
-        <!-- Titre de la page -->
         <div class="title">
             <h1>Portfolio Conclusion</h1>
         </div>
-
-        <!-- Barre latérale (menu) -->
-        <div class="SideHeader">
-            
-            <!-- Section supérieure de la barre latérale -->
-            <div class="top">
-                <!-- Icône d'épée -->
-                <img src="./assets/svg/sword-fill-svgrepo-com.svg" alt="Icône d'épée" class="sword">
-                <!-- Icône de classement -->
-                <img src="./assets/svg/leaderboard-star-svgrepo-com.svg" alt="Icône de classement" class="leaderboard">
-            </div>
-            
-            <!-- Section inférieure de la barre latérale -->
-            <div class="bottom">
-                <!-- Icône de maison -->
-                <img src="./assets/svg/home-icon-silhouette-svgrepo-com (1).svg" alt="Icône de maison" class="home">
-            </div>
-
-        </div>
-
-        <!-- Contenu principal de la page -->
         <div class="paragraphe">
             <h2>(Conclusion à insérer ici)</h2>
         </div>
-
     </div>
 
-    <!-- Image de Nyan Cat qui suit la souris -->
-    <img src="assets/img/nyan_cat.png" alt="Nyan Cat" id="nyanCat" />
-    <!-- Image animée qui bouge de manière aléatoire -->
-    <img src="assets/img/Chinois_neige.gif" alt="Image animée" id="movingImage">
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let cursor = document.createElement("img");
+            cursor.src = "./assets/img/nyan_cat.gif";
+            cursor.style.position = "absolute";
+            cursor.style.width = "64px";
+            cursor.style.pointerEvents = "none";
+            document.body.appendChild(cursor);
 
+            document.addEventListener("mousemove", (e) => {
+                cursor.style.left = `${e.pageX}px`;
+                cursor.style.top = `${e.pageY}px`;
+            });
+        });
 
-    <!-- Lien vers ton fichier JS -->
-    <!-- Utilise un chemin relatif à partir du fichier HTML -->
-    <script src="./assets/js/conclusion.js"></script>
+        // Détecter le clic pour afficher l'image des confettis
+        document.addEventListener('click', function(e) {
+            var confettiImage = document.getElementById('confettiImage');
+
+            var x = e.pageX;
+            var y = e.pageY;
+
+            confettiImage.style.left = (x - confettiImage.width / 2) + 'px';
+            confettiImage.style.top = (y - confettiImage.height / 2) + 'px';
+
+            confettiImage.style.display = 'block';
+
+            setTimeout(function() {
+                confettiImage.style.display = 'none';
+            }, 2000);  // 2 secondes d'affichage
+        });
+
+        // Fonction pour afficher l'image de neige de manière aléatoire et réduire sa taille de 25%
+        function moveSnowImageRandomly() {
+            var snowImage = document.getElementById('chineseSnowImage');
+            snowImage.style.display = 'block';
+
+            // Obtenir les dimensions naturelles de l'image
+            var naturalWidth = snowImage.naturalWidth;
+            var naturalHeight = snowImage.naturalHeight;
+
+            // Réduire la taille de l'image de 25% (75% de la taille d'origine)
+            snowImage.style.width = (naturalWidth * 0.25) + 'px';
+            snowImage.style.height = (naturalHeight * 0.25) + 'px';
+
+            // Position aléatoire sur l'écran
+            var x = Math.random() * window.innerWidth;  // Largeur de la fenêtre
+            var y = Math.random() * window.innerHeight;  // Hauteur de la fenêtre
+
+            // Définir la position de l'image
+            snowImage.style.left = `${x}px`;
+            snowImage.style.top = `${y}px`;
+
+            // Le mouvement (répéter toutes les secondes)
+            setTimeout(moveSnowImageRandomly, 1000);
+        }
+
+        // Appeler la fonction pour afficher l'image de neige
+        moveSnowImageRandomly();
+    </script>
+
 </body>
 </html>
