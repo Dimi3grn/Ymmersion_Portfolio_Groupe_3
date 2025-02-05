@@ -13,7 +13,7 @@
     <img id="confettiImage" src="assets/img/confettis-fun.gif" style="display:none; position: absolute; z-index: 1000;">
 
     <!-- Image animée de neige (le logo chinois qui rebondit) -->
-    <img id="chineseSnowImage" src="assets/img/Chinois_neige.gif" style="display:none; position: absolute; z-index: 1000;">
+    
 
     <div class="fixed">
         <nav class="sidebar">
@@ -78,32 +78,10 @@
         });
 
         // Fonction pour afficher l'image de neige de manière aléatoire et réduire sa taille de 25%
-        function moveSnowImageRandomly() {
-            var snowImage = document.getElementById('chineseSnowImage');
-            snowImage.style.display = 'block';
-
-            // Obtenir les dimensions naturelles de l'image
-            var naturalWidth = snowImage.naturalWidth;
-            var naturalHeight = snowImage.naturalHeight;
-
-            // Réduire la taille de l'image de 25% (75% de la taille d'origine)
-            snowImage.style.width = (naturalWidth * 0.25) + 'px';
-            snowImage.style.height = (naturalHeight * 0.25) + 'px';
-
-            // Position aléatoire sur l'écran
-            var x = Math.random() * window.innerWidth;  // Largeur de la fenêtre
-            var y = Math.random() * window.innerHeight;  // Hauteur de la fenêtre
-
-            // Définir la position de l'image
-            snowImage.style.left = `${x}px`;
-            snowImage.style.top = `${y}px`;
-
-            // Le mouvement (répéter toutes les secondes)
-            setTimeout(moveSnowImageRandomly, 1000);
-        }
+        
 
         // Appeler la fonction pour afficher l'image de neige
-        moveSnowImageRandomly();
+        
     </script>
 
 </body>
