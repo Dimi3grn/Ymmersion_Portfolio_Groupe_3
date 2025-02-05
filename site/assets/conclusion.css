@@ -203,6 +203,7 @@ img.home {
     font-size: 1.2rem;
     font-weight: 500;
     animation: pulse 3s infinite alternate; /* Animation pulsante */
+    z-index: -1;
 }
 
 /* ============================ 
