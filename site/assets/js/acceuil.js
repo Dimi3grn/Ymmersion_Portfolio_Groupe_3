@@ -150,3 +150,4 @@ window.addEventListener("scroll", () => {
         }, 1200); // 1.5 seconds
     }
 });
+

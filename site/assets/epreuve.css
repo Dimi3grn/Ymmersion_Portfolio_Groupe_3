@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
 }
 
 h1{
@@ -81,55 +82,108 @@ h1{
 main{
     margin-left: 4vw;
     width: 96vw;
-    height: 220vh;
-    background: url("./img/fondmc.png");
+    height: 170vh;
+    background: url("./img/dirt.png");
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
 .title{
-    background-color: #209E20;
+    background-color: #6aaf50;
     margin-top: 4vh;
     padding: 10px;
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
+.flip-container {
+  margin-top: 6vh;
+  cursor: pointer;
+  width: 400px;
+  height: 400px;
+  perspective: 1000px; /* Creates 3D effect */
+}
+
+.flipper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.flipped .flipper {
+  transform: rotateY(-180deg);
+}
+
 .creeper {
-    width: 400px; /* 200px * 1.5 */
-    height: 400px; /* 200px * 1.5 */
-    background-color: #6aaf50;
-    border-radius: 10px; /* 5px * 1.5 */
-    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2); /* 4px*1.5 et 10px*1.5 */
-    position: relative;
-    margin-top: 10vh;
+  width: 100%;
+  height: 100%;
+  background-color: #6aaf50;
+  border-radius: 10px;
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  backface-visibility: hidden; /* Hides the back side */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.front {
+  position: absolute;
+}
+
+.back {
+  transform: rotateY(-180deg);
+  background-color: green;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.back h1{
+  color: black;
+  position: inherit;
+  font-size: 40px;
+  top: 25px;
+}
+
+.squareblack{
+  width: 100px;
+  height: 100px;
+  background-color: black;
+}
+
+/* Pixel Elements */
 .pixel {
-    position: absolute;
-    width: 80px; /* 40px * 1.5 */
-    height: 80px; /* 40px * 1.5 */
-    background-color: black;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: black;
 }
 
-/* Yeux */
-.eye-left { top: 80px; left: 80px; } /* 40px * 1.5 */
-.eye-right { top: 80px; right: 80px; } /* 40px * 1.5 */
+/* Eyes */
+.eye-left { top: 80px; left: 80px; }
+.eye-right { top: 80px; right: 80px; }
 
-/* Nez */
-.nose-top { top: 160px; left: 160px; } /* 80px * 1.5 */
-.nose-bottom { top: 240px; left: 240px; } /* 120px * 1.5 */
+/* Nose */
+.nose-top { top: 160px; left: 160px; }
+.nose-bottom { top: 240px; left: 240px; }
 
-/* Bouche */
-.mouth-top-left { top: 200px; left: 80px; } /* 100px * 1.5 */
-.mouth-top-right { top: 200px; right: 80px; } /* 100px * 1.5 */
-.mouth-bottom-left { top: 280px; left: 80px; } /* 140px * 1.5 */
-.mouth-bottom-right { top: 280px; right: 80px; } /* 140px * 1.5 */
+/* Mouth */
+.mouth-top-left { top: 200px; left: 80px; }
+.mouth-top-right { top: 200px; right: 80px; }
+.mouth-bottom-left { top: 280px; left: 80px; }
+.mouth-bottom-right { top: 280px; right: 80px; }
 
 .container-description {
-    width: 90%;
-    height: 100px;
+    width: 60%;
     background:linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff); /* Dégradé arc-en-ciel */
     color: black;
     top: 80%;
@@ -156,7 +210,7 @@ input[type=radio] {
     margin: auto;
     transition: transform .4s ease;
     cursor: pointer;
-    background-color: #403d40;
+    background-color: #6aaf50;
     border-radius: 15px;
   }
   
@@ -178,6 +232,7 @@ input[type=radio] {
     width: 100%;
     height: 100%;
     margin-bottom: 20px;
+    user-select: none;
   }
   
   img {
@@ -187,19 +242,19 @@ input[type=radio] {
     object-fit: cover;
   }
   
-  #item-1:checked ~ .cards #song-3, #item-2:checked ~ .cards #song-1, #item-3:checked ~ .cards #song-2 {
+  #item-1:checked ~ .cards #song-3, #item-2:checked ~ .cards #song-1, #item-3:checked ~ .cards #codecard {
     transform: translatex(-40%) scale(.8);
-    opacity: .4;
+    opacity: .7;
     z-index: 0;
   }
   
-  #item-1:checked ~ .cards #song-2, #item-2:checked ~ .cards #song-3, #item-3:checked ~ .cards #song-1 {
+  #item-1:checked ~ .cards #codecard, #item-2:checked ~ .cards #song-3, #item-3:checked ~ .cards #song-1 {
     transform: translatex(40%) scale(.8);
-    opacity: .4;
+    opacity: .7;
     z-index: 0;
   }
   
-  #item-1:checked ~ .cards #song-1, #item-2:checked ~ .cards #song-2, #item-3:checked ~ .cards #song-3 {
+  #item-1:checked ~ .cards #song-1, #item-2:checked ~ .cards #codecard, #item-3:checked ~ .cards #song-3 {
     transform: translatex(0) scale(1);
     opacity: 1;
     z-index: 1;
@@ -222,3 +277,56 @@ input[type=radio] {
     transform: translateY(-80px);
   }
 
+.card{
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: top;
+    justify-content: center;
+    text-align: center;
+}
+
+.card h1{
+    margin-top: 16px;
+}
+
+
+.card p{
+    font-size: 22px;
+    margin: 35px;
+}
+
+pre {
+    background: #2d2d2d;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: "Fira Code", monospace;
+    width: 80%;
+    height: 80%;
+  }
+
+  .codecard{
+    cursor: pointer; /* Change le curseur pour indiquer que c'est cliquable */
+    transition: all 0.3s ease; /* Animation douce pour l'agrandissement */
+  }
+
+.expanded{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60vw; /* Occupe toute la largeur de l'écran */
+    height: 75vh; /* Occupe toute la hauteur de l'écran */
+    position: fixed;
+    top: 0;
+    left: -22%;
+    transform: translateX(-50%);
+    z-index: 9999; /* Assure que la fenêtre de code est au-dessus de tout */
+    margin: 0; /* Retirer les marges pour occuper tout l'espace */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Ombre pour l'effet visuel */
+}
+
+.expanded h1{
+  display: none;
+}
