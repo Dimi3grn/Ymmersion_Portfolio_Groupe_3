@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epreuve 5</title>
+    <link rel="stylesheet" href="./assets/epreuve5.css">
+    <!-- Prism.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
+
+</head>
+<body>
+    <script src="./assets/js/epreuve.js"></script>
+    <div class="fixed">
+        <nav class="sidebar">
+            <div class="top">
+                <div class="svgcont">
+                    <img src="./assets/svg/sword-fill-svgrepo-com.svg" alt="logo">
+                    <span>Epreuves</span>
+                </div>
+                <div class="svgcont">
+                    <img src="./assets/svg/leaderboard-star-svgrepo-com.svg" alt="">
+                    <span>classement</span>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="svgcont">
+                    <img src="./assets/svg/home-icon-silhouette-svgrepo-com (1).svg" alt="">
+                    <span>Accueil</span>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <main>
+        <div class="title">
+            <h1>EPREUVE 5</h1>
+        </div>
+        <div class="flip-container" onclick="this.classList.toggle('flipped')">
+            <div class="flipper">
+                <!-- Front Side -->
+                <div class="creeper front">
+                    <div class="pixel eye-left"></div>
+                    <div class="pixel eye-right"></div>
+                    <div class="pixel nose-top"></div>
+                    <div class="pixel nose-bottom"></div>
+                    <div class="pixel mouth-top-left"></div>
+                    <div class="pixel mouth-top-right"></div>
+                    <div class="pixel mouth-bottom-left"></div>
+                    <div class="pixel mouth-bottom-right"></div>
+                </div>
+                <!-- Back Side -->
+            </div>
+        </div>
+        <div class="container-description">
+            <h2>Le programme analyse un texte pour afficher le nombre de mots, de caractères et le mot le plus long.</h2>
+        </div> 
+        <div class="caroussel">
+            <input type="radio" name="slider" id="item-1" checked>
+            <input type="radio" name="slider" id="item-2">
+            <input type="radio" name="slider" id="item-3">
+            <div class="cards">
+            <label class="card" for="item-1" id="song-1">
+                <h1>Logique et réfléxion</h1>
+                <p> Pour reproduire la tête du Creeper en HTML et CSS, nous avons structuré l'affichage en blocs positionnés avec précision.
+
+                    Le fond vert de la tête est défini par un conteneur .creeper. Les yeux, le nez et la bouche sont créés avec des div supplémentaires, chacune ayant une classe .pixel et étant positionnée en absolute. Cela permet de reproduire fidèlement le design pixelisé du Creeper en plaçant chaque élément à des coordonnées précises.
+                    
+                    Cette approche assure une construction modulaire et facile à ajuster, tout en respectant l'esthétique du jeu Minecraft.</p>
+            </label>
+            <label class="card codecard" for="item-2" id="codecard">
+                <h1>Code</h1>
+                <pre><code class="language-css">
+                    package main
+
+                    import (
+                        "bufio"
+                        "fmt"
+                        "os"
+                        "strings"
+                    )
+                    
+                    // Fonction pour analyser le texte
+                    func analyzeText(text string) (int, int, string) {
+                        // Supprimer les espaces superflus
+                        text = strings.TrimSpace(text)
+                    
+                        // Découper en mots
+                        words := strings.Fields(text)
+                        wordCount := len(words)
+                        charCount := len(strings.ReplaceAll(text, " ", "")) // Ne pas compter les espaces
+                    
+                        // Trouver le mot le plus long
+                        longestWord := ""
+                        for _, word := range words {
+                            if len(word) > len(longestWord) {
+                                longestWord = word
+                            }
+                        }
+                    
+                        return wordCount, charCount, longestWord
+                    }
+                    
+                    func main() {
+                        scanner := bufio.NewScanner(os.Stdin)
+                    
+                        fmt.Println("📊 Analyseur de Texte")
+                        fmt.Println("➡️  Entrez un texte (ou tapez 'exit' pour quitter) :")
+                    
+                        for {
+                            fmt.Print("> ")
+                            scanner.Scan()
+                            input := scanner.Text()
+                    
+                            // Vérifier si l'utilisateur veut quitter
+                            if strings.ToLower(input) == "exit" {
+                                fmt.Println("👋 Merci d'avoir utilisé l'analyseur ! À bientôt !")
+                                break
+                            }
+                    
+                            // Analyser le texte
+                            wordCount, charCount, longestWord := analyzeText(input)
+                    
+                            // Affichage des résultats
+                            fmt.Println("\n📊 Résultats de l'analyse :")
+                            fmt.Printf("📝 Nombre de mots : %d\n", wordCount)
+                            fmt.Printf("🔢 Nombre de caractères (sans espaces) : %d\n", charCount)
+                            fmt.Printf("🏆 Mot le plus long : \"%s\"\n\n", longestWord)
+                        }
+                    }
+                </code></pre>
+                    
+            </label>
+            <label class="card" for="item-3" id="song-3">
+                <h1>Leçons apprises</h1>
+                <p>Le résultat n’est clairement pas ce qu’on attendait : au lieu de créer une tête de Creeper, on a simplement obtenu un carré vert. Cependant, cette expérience nous a permis de comprendre nos erreurs. On a réalisé qu'il est essentiel de mieux structurer notre travail dès le début et d’utiliser les outils CSS de manière plus réfléchie pour obtenir un résultat final plus proche de ce qu’on voulait.</p>
+            </label>
+          </div>
+        </div>
+    </main>
+</body>
+</html>
