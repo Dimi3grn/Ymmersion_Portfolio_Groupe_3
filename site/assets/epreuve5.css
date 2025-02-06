@@ -90,8 +90,29 @@ main{
   align-items: center;
   flex-wrap: wrap;
 }
+.flip-container {
+  margin-top: 6vh;
+  cursor: pointer;
+  width: 400px;
+  height: 400px;
+  perspective: 1000px; /* Creates 3D effect */
+}
 
-.expml{
+.flipper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+.Xerly_expml-back{
+  width: 50%;
+  height: 25%;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-top: 50px;
+}
+.expml-front{
   width: 50%;
   height: 25%;
   border-radius: 10px;
