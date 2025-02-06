@@ -161,7 +161,7 @@ p {
     background-color: white;
     width: 70%;
     height: 70%;
-    background-image: url("../assets/img/xerly.jpg");
+    background-image: url("/static/img/xerly.jpg");
     background-size: cover;
     background-position: center;
     animation: rotateSquare 2s linear infinite;
@@ -179,7 +179,7 @@ p {
     background-color: white;
     width: 70%;
     height: 70%;
-    background-image: url("../assets/img/jeremie.png");
+    background-image: url("/static/img/jeremie.png");
     background-size: cover;
     background-position: center top -40px;
     animation: rotateSquare 2s linear infinite;
@@ -189,7 +189,7 @@ p {
     background-color: white;
     width: 70%;
     height: 70%;
-    background-image: url("../assets/img/romain.png");
+    background-image: url("/static/img/romain.png");
     background-size: cover;
     background-position: center;
     animation: rotateSquare 2s linear infinite;
@@ -199,7 +199,7 @@ p {
     background-color: white;
     width: 70%;
     height: 70%;
-    background-image: url("../assets/img/etienne.jpg");
+    background-image: url("/static/img/etienne.jpg");
     background-size: cover;
     background-position: center;
     animation: rotateSquare 2s linear infinite;
@@ -209,7 +209,7 @@ p {
     background-color: white;
     width: 70%;
     height: 70%;
-    background-image: url("../assets/img/eddy.jpg");
+    background-image: url("/static/img/eddy.jpg");
     background-size: cover;
     background-position: center;
     animation: rotateSquare 2s linear infinite;
@@ -219,7 +219,7 @@ p {
     background-color: white;
     width: 70%;
     height: 70%;
-    background-image: url("../assets/img/Dimitri.jpg");
+    background-image: url("/static/img/Dimitri.jpg");
     background-size: 140%;
     background-position: center top 0px;
     animation: rotateSquare 2s linear infinite;

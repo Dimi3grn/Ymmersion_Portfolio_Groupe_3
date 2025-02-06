@@ -1,37 +1,39 @@
+{{define "acceuil"}}
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acceuil</title>
-    <link rel="stylesheet" href="./assets/acceuil.css">
+    <link rel="stylesheet" href="/static/acceuil.css">
 </head>
 <body>
-    <img src="./assets/img/licorne.png" alt="Licorne Magique" class="unicorn">
-    <img src="./assets/img/licorne.png" alt="Licorne Magique" class="unicorn">
-    <img src="./assets/img/licorne.png" alt="Licorne Magique" class="unicorn">
-    <img src="./assets/img/licorne.png" alt="Licorne Magique" class="unicorn">
-    <img src="./assets/img/licorne.png" alt="Licorne Magique" class="unicorn">
-    <img src="./assets/img/licorne.png" alt="Licorne Magique" class="unicorn">
+    <img src="/static/img/licorne.png" alt="Licorne Magique" class="unicorn">
+    <img src="/static/img/licorne.png" alt="Licorne Magique" class="unicorn">
+    <img src="/static/img/licorne.png" alt="Licorne Magique" class="unicorn">
+    <img src="/static/img/licorne.png" alt="Licorne Magique" class="unicorn">
+    <img src="/static/img/licorne.png" alt="Licorne Magique" class="unicorn">
+    <img src="/static/img/licorne.png" alt="Licorne Magique" class="unicorn">
 
-    <script src="./assets/js/acceuil.js"></script>
+    <script src="/static/js/acceuil.js"></script>
     <audio id="bgMusic" loop>
-        <source src="./assets/music/music.mp3" type="audio/mpeg">
+        <source src="/static/music/music.mp3" type="audio/mpeg">
     </audio>
     <div class="fixed">
         <nav class="sidebar">
             <div class="top">
                 <div class="svgcont">
-                    <img src="./assets/svg/sword-fill-svgrepo-com.svg" alt="logo">
+                    <img src="/static/svg/sword-fill-svgrepo-com.svg" alt="logo">
                     <span>Epreuves</span>
                 </div>
                 <div  class="svgcont">
-                    <img src="./assets/svg/leaderboard-star-svgrepo-com.svg" alt="">
+                    <img src="/static/svg/leaderboard-star-svgrepo-com.svg" alt="">
                     <span>classement</span>
                 </div>
             </div>
             <div class="bottom">
                 <div class="svgcont">
-                    <img src="./assets/svg/home-icon-silhouette-svgrepo-com (1).svg" alt="">
+                    <img src="/static/svg/home-icon-silhouette-svgrepo-com (1).svg" alt="">
                     <span>Accueil</span>
                 </div>
             </div>
@@ -90,3 +92,4 @@
     </div>
 </body>
 </html>
+{{end}}
