@@ -1,9 +1,17 @@
 body {
     margin: 0;
     padding: 0;
+    height: 100vh;
     font-family: 'Inter', sans-serif;
     background-color: #209E20;
-    text-align: center
+    text-align: center;
+    overflow-x: hidden;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
@@ -77,16 +85,18 @@ body {
 }
 
 .container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    display: flex;
     gap: 20px;
-    width: 90%;
-    max-width: 1000px;
-    position: relative;
-    top  : 120px;   
-    left: 250px;
-    
+    width: 70%;
+    flex-direction: column;
+    margin-top: 70px;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 25px;
 }
 
 .item {
@@ -112,7 +122,7 @@ body {
     -webkit-text-fill-color: transparent;
 }
 .title{
-    margin: 0% ;
+    width: 100%;
     font-family: 'Inter', sans-serif;
     font-weight: bold;
     text-align: center;
