@@ -136,6 +136,9 @@ body {
     padding: 20px 0;
     width: 100%;
 }
+body {
+    cursor: none;
+}
 
 /* Icônes et texte dans svgcont */
 .svgcont, .SideHeader img {
