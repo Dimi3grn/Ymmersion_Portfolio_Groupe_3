@@ -62,44 +62,67 @@
             <div class="cards">
             <label class="card" for="item-1" id="song-1">
                 <h1>Logique et réfléxion</h1>
-                <p> Pour reproduire la tête du Creeper en HTML et CSS, nous avons structuré l'affichage en blocs positionnés avec précision.
-
-                    Le fond vert de la tête est défini par un conteneur .creeper. Les yeux, le nez et la bouche sont créés avec des div supplémentaires, chacune ayant une classe .pixel et étant positionnée en absolute. Cela permet de reproduire fidèlement le design pixelisé du Creeper en plaçant chaque élément à des coordonnées précises.
-                    
-                    Cette approche assure une construction modulaire et facile à ajuster, tout en respectant l'esthétique du jeu Minecraft.</p>
+                <p> Normalisation :<br>  
+                    Convertir la chaîne en minuscules (strings.ToLower()) et enlever les espaces (strings.ReplaceAll()), pour garantir une comparaison correcte.<br>
+                    Vérification de palindrome :<br>                    
+                    Comparer chaque caractère en miroir (premier avec dernier, etc.) jusqu'à la moitié de la chaîne. Cela permet d'éviter de l'inverser entièrement, rendant l'algorithme O(n).<br>
+                    Interaction avec l'utilisateur :<br>
+                    Utiliser bufio.Scanner pour gérer les phrases et permettre des entrées continues.<br>
+                    Utiliser "exit" pour quitter proprement le programme.</p>
             </label>
             <label class="card codecard" for="item-2" id="codecard">
                 <h1>Code</h1>
                 <pre><code class="language-css">
-.creeper {
-    width: 400px;   
-    height: 400px;
-    background-color: #6aaf50;
-    border-radius: 10px;
-    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
-    position: relative;
-    margin-top: 10vh;
+package main
+
+import (
+    "bufio"
+    "fmt"
+    "os"
+    "strings"
+)
+
+// Fonction pour vérifier si une chaîne est un palindrome
+func isPalindrome(s string) bool {
+    // Convertir en minuscules et enlever les espaces
+    s = strings.ToLower(strings.ReplaceAll(s, " ", ""))
+
+    // Comparer les caractères en miroir
+    n := len(s)
+    for i := 0; i < n/2; i++ {
+        if s[i] != s[n-1-i] {
+            return false
+        }
+    }
+    return true
 }
 
-.pixel {
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    background-color: black;
+func main() {
+    scanner := bufio.NewScanner(os.Stdin)
+
+    fmt.Println("🔄 Bienvenue dans le jeu du Palindrome !")
+    fmt.Println("➡️  Entrez un mot ou une phrase (ou tapez 'exit' pour quitter) :")
+
+    for {
+        fmt.Print("> ")
+        scanner.Scan()
+        input := scanner.Text()
+
+        // Vérifier si l'utilisateur veut quitter
+        if strings.ToLower(input) == "exit" {
+            fmt.Println("👋 Merci d'avoir joué ! À bientôt !")
+            break
+        }
+
+        // Vérifier si le mot est un palindrome
+        if isPalindrome(input) {
+            fmt.Println("✅ C'est un palindrome ! 🎉")
+        } else {
+            fmt.Println("❌ Ce n'est pas un palindrome.")
+        }
+    }
 }
-
-.eye-left { top: 80px; left: 80px; }
-.eye-right { top: 80px; right: 80px; } 
-
-/* Nez */
-.nose-top { top: 160px; left: 160px; } 
-.nose-bottom { top: 240px; left: 240px; } 
-
-/* Bouche */
-.mouth-top-left { top: 200px; left: 80px; } 
-.mouth-top-right { top: 200px; right: 80px; }
-.mouth-bottom-left { top: 280px; left: 80px; } 
-.mouth-bottom-right { top: 280px; right: 80px; }
+                    
                 </code></pre>
                     
             </label>
