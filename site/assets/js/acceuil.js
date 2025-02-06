@@ -132,3 +132,22 @@ window.addEventListener("scroll", () => {
 
     lastScrollY = currentScrollY; // Mise à jour de la position précédente
 });
+
+let isAtBottom = false;
+
+window.addEventListener("scroll", () => {
+    if (isAtBottom) return;
+
+    const scrolledToBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight;
+
+    if (scrolledToBottom) {
+        isAtBottom = true; // Prevent multiple triggers
+        document.body.style.overflow = "hidden"; // Disable scrolling
+
+        setTimeout(() => {
+            document.body.style.overflow = ""; // Re-enable scrolling
+            isAtBottom = false;
+        }, 1200); // 1.5 seconds
+    }
+});
+

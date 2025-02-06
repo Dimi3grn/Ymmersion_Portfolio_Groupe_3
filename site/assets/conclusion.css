@@ -1,106 +1,214 @@
-/* ============================
+/* ============================ 
    Style global
 ============================ */
 body {
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: row;
-    padding: 0;
-    margin: 0;
     font-family: 'Inter', sans-serif; /* Police principale */
     background-color: #209E20; /* Fond vert global */
+    overflow: hidden; /* Empêche le défilement si des éléments débordent */
+    cursor: url('./assets/img/nyan_cat.gif'), auto; /* Curseur personnalisé */
 }
 
-/* ============================
-   Barre latérale
+/* Import de la police Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* ============================ 
+   Barre latérale (Sidebar)
 ============================ */
-.SideHeader {
-    background-color: #AF0000; /* Couleur de fond rouge */
-    width: 6vw; /* Largeur initiale */
-    height: 100vh; /* Hauteur de la fenêtre */
+
+/* .fixed : règles de la sidebar du premier CSS */
+.fixed {
+    position: fixed;
+    height: 100vh;
+    width: 4vw;
+    background-color: #AF0000;
+    transition: width 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+/* .sidebar : règles de la sidebar du premier CSS */
+.sidebar {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+
+/* .top, .bottom : règles de la sidebar du premier CSS */
+.top {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    width: 100%;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 3vh;
+}
+
+/* svgcont : règles de la sidebar du premier CSS */
+.svgcont {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    white-space: nowrap;
+}
+
+.svgcont img {
+    margin-left: 15px;
+    height: 30px;
+    width: 30px;
+}
+
+/* Cacher le texte par défaut dans svgcont */
+.svgcont span {
+    color: black;
+    font-size: 1rem;
+    margin-left: 10px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Effet au survol pour .fixed */
+.fixed:hover {
+    width: 10vw; /* Augmenté à 10vw */
+}
+
+/* Affichage du texte dans svgcont au survol */
+.fixed:hover .svgcont span {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ============================ 
+   Styles généraux pour la Sidebar
+============================ */
+
+/* .SideHeader : règles du second CSS liées à la sidebar */
+.SideHeader {
     position: fixed;
     top: 0;
     left: 0;
-    transition: width 0.3s ease-in-out; /* Transition lors du survol */
+    height: 100vh;
+    background-color: #AF0000; /* Couleur de fond rouge */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: width 0.3s ease-in-out;
+    overflow: hidden;
 }
 
-/* Effet au survol de la barre latérale */
-.SideHeader:hover {
-    width: 20vw; /* Largeur étendue */
+/* Largeur initiale de la sidebar */
+.SideHeader {
+    width: 6vw;
 }
 
-/* Contenu supérieur et inférieur de la barre latérale */
+.fixed {
+    width: 4vw;
+}
+
+/* Effet au survol pour la sidebar */
+.SideHeader:hover, .fixed:hover {
+    width: 20vw; /* Largeur augmentée au survol */
+}
+
+/* Contenu de la sidebar */
 .SideHeader .top, 
-.SideHeader .bottom {
+.SideHeader .bottom, 
+.fixed .top, 
+.fixed .bottom {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px; /* Espacement entre les icônes */
+    gap: 20px;
     padding: 20px 0;
+    width: 100%;
 }
 
-/* Icônes de la barre latérale */
-.SideHeader img {
-    width: 50%; /* Taille des icônes */
-    transition: transform 0.3s ease-in-out; /* Animation au survol */
+/* Icônes et texte dans svgcont */
+.svgcont, .SideHeader img {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    white-space: nowrap;
 }
 
-/* Effet de zoom au survol des icônes */
+.svgcont img, 
+img.sword, 
+img.leaderboard, 
+img.home {
+    height: 30px;
+    width: 30px;
+    margin-left: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Zoom au survol des icônes */
 .SideHeader img:hover {
     transform: scale(1.2);
 }
 
-/* ============================
-   Section principale
+/* Affichage du texte au survol dans svgcont */
+.fixed:hover .svgcont span {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ============================ 
+   Section principale (Main)
 ============================ */
 .main {
-    margin-left: 6vw; /* Décalage pour la barre latérale */
+    margin-left: 6vw; /* Décalage de la barre latérale */
     width: 94vw; /* Largeur restante */
-    background-color: transparent; /* Retirer la couleur bleue de fond */
+    background: none; /* Pas de fond blanc */
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px; /* Espacement interne */
+    padding: 20px;
 }
 
 /* Titre principal */
 .title {
-    margin-top: 50px; /* Marges pour espacer le haut */
-    font-size: 2rem; /* Taille du texte */
+    margin-top: 50px;
+    font-size: 2rem;
     font-weight: bold;
     text-align: center;
-    color: white; /* Couleur du texte */
+    color: black;
 }
 
-/* Paragraphe de contenu (conclusion) avec dégradé arc-en-ciel */
+/* Paragraphe de contenu */
 .paragraphe {
     margin-top: 20px;
-    width: 80%; /* Largeur relative */
-    background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff); /* Dégradé arc-en-ciel */
-    color: black; /* Couleur du texte */
-    padding: 20px; /* Espacement interne */
-    border-radius: 10px; /* Coins arrondis */
-    text-align: center; /* Centrage du texte */
-    font-size: 1.2rem; /* Taille du texte */
+    width: 80%;
+    background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff);
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.2rem;
     font-weight: 500;
+    animation: pulse 3s infinite alternate; /* Animation pulsante */
+    z-index: -1;
 }
 
-/* ============================
-   Images spécifiques
-============================ */
-img.sword, 
-img.leaderboard, 
-img.home {
-    width: 50px; /* Taille spécifique des icônes */
-}
-
-/* ============================
+/* ============================ 
    Animation
 ============================ */
-/* Animation de "pulse" pour ajouter un effet de pulsation */
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -113,70 +221,31 @@ img.home {
     }
 }
 
-/* ============================
-   Règles par défaut pour les <p>
+/* ============================ 
+   Images animées
 ============================ */
-p {
-    margin: 0;
-    padding: 0;
-    font-size: initial;
-    font-weight: normal;
-}
 
-/* Style de l'image Nyan Cat */
-#nyanCat {
-    position: fixed;
-    pointer-events: none;
-    transition: transform 0.1s ease-in-out;
-    width: 300px;  /* Largeur spécifique */
-    height: 80px;  /* Hauteur spécifique */
-}
-/* Style de l'image animée */
+
+
 #confettiImage {
-    position: fixed;
-    top: 50%;   /* Position verticale centrée */
-    left: 50%;  /* Position horizontale centrée */
-    transform: translate(-50%, -50%);  /* Centrage exact */
-    z-index: 1000; /* Assure que l'image est devant les autres éléments */
-    display: none; /* Masquée par défaut */
-    width: 1000px;  /* Largeur de l'image */
-}
-#movingImage {
-    position: absolute;
-    width: 100px; /* Ajuste la taille si nécessaire */
-    height: auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-}
-
-
-
-
-/* ============================
-   Responsivité
-============================ */
-/* Adaptation pour les écrans plus petits */
-@media (max-width: 768px) {
-    .SideHeader {
-        width: 12vw; /* Réduction de la largeur */
-    }
-    .SideHeader:hover {
-        width: 18vw; /* Largeur étendue au survol */
-    }
-    .main {
-        margin-left: 12vw; /* Ajustement de la marge gauche */
-        width: 88vw; /* Réduction de la largeur */
-    }
-    .title {
-        font-size: 1.5rem; /* Réduction de la taille du titre */
-    }
-    .paragraphe {
-        font-size: 1rem; /* Réduction de la taille du texte */
-    }
+    display: none; /* L'image est cachée par défaut */
+    width: 300px;  /* Ajustez la taille de l'image si nécessaire */
+    height: 300px;
+    transition: transform 1s ease-in-out; /* Pour une animation douce */
 }
 body {
-    cursor: none;
+    position: relative; /* Permet aux éléments absolus d’être bien positionnés */
 }
 
+
+
+
+
+/* ============================ 
+   Responsivité
+============================ */
+@media (max-width: 768px) {
+    .SideHeader, .fixed {
+        width: 12vw;
+    }
+}

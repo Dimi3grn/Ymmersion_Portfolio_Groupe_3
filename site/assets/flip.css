@@ -1,0 +1,68 @@
+.flip-container {
+    cursor: pointer;
+    width: 400px;
+    height: 400px;
+    perspective: 1000px; /* Creates 3D effect */
+}
+
+.flipper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.flipped .flipper {
+    transform: rotateY(180deg);
+}
+
+.creeper {
+    width: 100%;
+    height: 100%;
+    background-color: #6aaf50;
+    border-radius: 10px;
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    backface-visibility: hidden; /* Hides the back side */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.front {
+    position: absolute;
+}
+
+.back {
+    transform: rotateY(180deg);
+    background-color: #4b8a3b;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Pixel Elements */
+.pixel {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: black;
+}
+
+/* Eyes */
+.eye-left { top: 80px; left: 80px; }
+.eye-right { top: 80px; right: 80px; }
+
+/* Nose */
+.nose-top { top: 160px; left: 160px; }
+.nose-bottom { top: 240px; left: 240px; }
+
+/* Mouth */
+.mouth-top-left { top: 200px; left: 80px; }
+.mouth-top-right { top: 200px; right: 80px; }
+.mouth-bottom-left { top: 280px; left: 80px; }
+.mouth-bottom-right { top: 280px; right: 80px; }
