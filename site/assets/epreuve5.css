@@ -82,7 +82,7 @@ h1{
 }
 
 main{
-  margin-left: 4vw;
+  margin-left: 10vw;
   width:80vw;
   height: auto;
   display: flex;
@@ -91,6 +91,13 @@ main{
   flex-wrap: wrap;
 }
 
+.expml{
+  width: 50%;
+  height: 25%;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-top: 50px;
+}
 
 .title{
     background-color: #6aaf50;

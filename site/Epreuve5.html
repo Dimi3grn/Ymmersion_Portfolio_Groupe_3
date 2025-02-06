@@ -37,21 +37,8 @@
         <div class="title">
             <h1>EPREUVE 5</h1>
         </div>
-        <div class="flip-container" onclick="this.classList.toggle('flipped')">
-            <div class="flipper">
-                <!-- Front Side -->
-                <div class="creeper front">
-                    <div class="pixel eye-left"></div>
-                    <div class="pixel eye-right"></div>
-                    <div class="pixel nose-top"></div>
-                    <div class="pixel nose-bottom"></div>
-                    <div class="pixel mouth-top-left"></div>
-                    <div class="pixel mouth-top-right"></div>
-                    <div class="pixel mouth-bottom-left"></div>
-                    <div class="pixel mouth-bottom-right"></div>
-                </div>
-                <!-- Back Side -->
-            </div>
+        <div class="expml">
+<img src="./assets/img/exmpl5.png"alt="code image">
         </div>
         <div class="container-description">
             <h2>Le programme analyse un texte pour afficher le nombre de mots, de caractères et le mot le plus long.</h2>
@@ -63,11 +50,7 @@
             <div class="cards">
             <label class="card" for="item-1" id="song-1">
                 <h1>Logique et réfléxion</h1>
-                <p> Pour reproduire la tête du Creeper en HTML et CSS, nous avons structuré l'affichage en blocs positionnés avec précision.
-
-                    Le fond vert de la tête est défini par un conteneur .creeper. Les yeux, le nez et la bouche sont créés avec des div supplémentaires, chacune ayant une classe .pixel et étant positionnée en absolute. Cela permet de reproduire fidèlement le design pixelisé du Creeper en plaçant chaque élément à des coordonnées précises.
-                    
-                    Cette approche assure une construction modulaire et facile à ajuster, tout en respectant l'esthétique du jeu Minecraft.</p>
+                <p>Ce programme Go est un analyseur de texte interactif qui lit une entrée utilisateur en continu, analyse le texte en comptant le nombre de mots, le nombre de caractères (hors espaces) et identifie le mot le plus long. Il utilise bufio.Scanner pour lire les entrées ligne par ligne et strings.Fields pour découper le texte en mots. Une boucle infinie permet à l'utilisateur d'entrer plusieurs textes jusqu'à ce qu'il tape "exit", ce qui stoppe le programme proprement. La logique repose sur le traitement des chaînes (TrimSpace, ReplaceAll, Fields), une boucle for pour trouver le mot le plus long et une gestion simple des entrées/sorties pour rendre l'outil interactif et intuitif.</p>
             </label>
             <label class="card codecard" for="item-2" id="codecard">
                 <h1>Code</h1>
@@ -134,7 +117,7 @@
             </label>
             <label class="card" for="item-3" id="song-3">
                 <h1>Leçons apprises</h1>
-                <p>Le résultat n’est clairement pas ce qu’on attendait : au lieu de créer une tête de Creeper, on a simplement obtenu un carré vert. Cependant, cette expérience nous a permis de comprendre nos erreurs. On a réalisé qu'il est essentiel de mieux structurer notre travail dès le début et d’utiliser les outils CSS de manière plus réfléchie pour obtenir un résultat final plus proche de ce qu’on voulait.</p>
+                <p>Ce programme enseigne des concepts fondamentaux en programmation Go, notamment la gestion des entrées utilisateur avec bufio.Scanner, la manipulation efficace des chaînes de caractères pour nettoyer et analyser un texte, ainsi que l'utilisation des boucles et conditions pour structurer un programme interactif. Il met en avant l'importance de parcourir des listes avec range pour extraire des informations spécifiques, comme le mot le plus long, et montre comment organiser le code de manière modulaire avec une fonction dédiée à l'analyse. De plus, il illustre la gestion d'une boucle infinie contrôlée, permettant une interaction continue jusqu'à une condition d'arrêt. Plus largement, ce programme souligne l'importance de la clarté du code, de la séparation des responsabilités et de la conception d’une interface utilisateur fluide et intuitive. </p>
             </label>
           </div>
         </div>
