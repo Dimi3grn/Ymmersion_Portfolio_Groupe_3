@@ -1,59 +1,33 @@
-<<<<<<< Updated upstream
-// Sélectionne l'image Nyan Cat par son ID
 const nyanCat = document.getElementById('nyanCat');
 
-// Écoute les mouvements de la souris pour déplacer Nyan Cat
-document.addEventListener('mousemove', (event) => {
-    const mouseX = event.pageX; // Utiliser pageX pour éviter les problèmes de défilement
-    const mouseY = event.pageY;
+if (nyanCat) {
+    nyanCat.style.position = 'absolute';
+    nyanCat.style.transition = 'transform 0.1s ease-out';
 
-    nyanCat.style.left = `${mouseX - nyanCat.width / 2}px`; 
-    nyanCat.style.top = `${mouseY - nyanCat.height / 2}px`; 
-});
+    document.addEventListener('mousemove', (event) => {
+        const mouseX = event.pageX;
+        const mouseY = event.pageY;
 
-// Détecte le clic pour afficher l'effet confetti
-document.addEventListener('click', function (e) {
-    const confettiImage = document.getElementById('confettiImage');
-    
-    const x = e.pageX;
-    const y = e.pageY;
+        nyanCat.style.transform = `translate(${mouseX - nyanCat.width / 2}px, ${mouseY - nyanCat.height / 2}px)`;
+    });
+}
 
-    confettiImage.style.left = `${x - confettiImage.width / 2}px`;  
-    confettiImage.style.top = `${y - confettiImage.height / 2}px`;  
-    confettiImage.style.display = 'block';
-
-    setTimeout(() => {
-        confettiImage.style.display = 'none';
-    }, 2000);
-=======
-// Sélectionne l'image par son ID
-const nyanCat = document.getElementById('nyanCat');
-
-// Écoute les mouvements de la souris
-document.addEventListener('mousemove', (event) => {
-    // Récupère les coordonnées X et Y de la souris
-    const mouseX = event.clientX;
-    const mouseY = event.clientY;
-
-    // Positionne l'image à ces coordonnées
-    nyanCat.style.left = `${mouseX - nyanCat.width / 2}px`;  // Ajuste la position X
-    nyanCat.style.top = `${mouseY - nyanCat.height / 2}px`;  // Ajuste la position Y
-});
-document.addEventListener('click', () => {
-    // Crée un élément img pour l'animation
+document.addEventListener('click', (event) => {
     const confettiImage = document.createElement('img');
-    confettiImage.src = 'assets/img/confettis-fun.gif';  // Chemin relatif vers l'image animée
-    confettiImage.id = 'confettiImage';  // Ajoute un ID pour pouvoir le styliser
+    confettiImage.src = 'assets/img/confettis-fun.gif';
+    confettiImage.style.position = 'absolute';
+    confettiImage.style.width = '100px';
+    confettiImage.style.height = '100px';
+    confettiImage.style.left = `${event.pageX - 50}px`;
+    confettiImage.style.top = `${event.pageY - 50}px`;
+    confettiImage.style.opacity = '1';
+    confettiImage.style.transition = 'opacity 1s ease-out';
+    confettiImage.style.pointerEvents = 'none';
 
-    // Ajoute l'image au body de la page
     document.body.appendChild(confettiImage);
 
-    // Affiche l'image (elle est cachée par défaut avec display: none)
-    confettiImage.style.display = 'block';
-
-    // Facultatif : Supprimer l'image après un certain temps (ex. 5 secondes)
     setTimeout(() => {
-        confettiImage.remove();
-    }, 1000);  // L'image disparaît après 5 secondes
->>>>>>> Stashed changes
+        confettiImage.style.opacity = '0';
+        setTimeout(() => confettiImage.remove(), 1000);
+    }, 1000);
 });
