@@ -90,7 +90,7 @@ body {
 }
 
 .item {
-    background-color: #fff;
+    background: white;
     height: 200px;
     width: 400px;
     display: flex;
@@ -100,7 +100,9 @@ body {
     border-radius: 10px; /* Optionnel pour un meilleur rendu */
     cursor: pointer;
     
-}   
+}  
+
+  
 .rainbow-text {
     font-size: 2.5rem;
     font-weight: bold;
@@ -123,12 +125,30 @@ body {
     padding: 3%
 }
 
-#img1 {
-    height: 100%;
-    width: 100%;
-    z-index: 1;
+.item1 {
+    background: url("../assets/img/creeper\ fond.png") no-repeat center center/cover;
+    height: 200px;
+    width: 400px;
+    display: flex;
+    text-align: center;          
+    border-radius: 10px; /* Optionnel pour un meilleur rendu */
+    cursor: pointer;
+     
+} 
+.item1 p {
+    width: 50%;
+    height: 20%;
+    color: #333;
+    background: transparent;
+    padding: 10px;
+    margin: 2%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-weight: bold;
+    transition: transform 0.3s ease;
 }
 
-.item p {
-    z-index: 0;
+.item1 p:hover {
+    transform: scale(1.1);
 }
