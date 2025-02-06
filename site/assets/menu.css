@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #209E20;
+    text-align: center
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.fixed {
+    position: fixed;
+    height: 100vh;
+    width: 4vw;
+    background-color: #AF0000;
+    transition: width 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.sidebar {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.top{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 3vh;
+}
+
+.svgcont {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    white-space: nowrap;
+}
+
+.svgcont img {
+    margin-left: 15px;
+    height: 30px;
+    width: 30px;
+}
+
+/* Cacher le texte par défaut */
+.svgcont span {
+    color: black;
+    font-size: 1rem;
+    margin-left: 10px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Effet au survol */
+.fixed:hover {
+    width: 10vw; /* Augmenté à 10vw */
+}
+
+.fixed:hover .svgcont span {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    width: 90%;
+    max-width: 1000px;
+    position: relative;
+    top  : 120px;   
+    left: 250px;
+    
+}
+
+.item {
+    background-color: #fff;
+    height: 200px;
+    width: 400px;
+    display: flex;
+    justify-content: center;     /* Centre horizontalement */
+    align-items: center;        /* Centre verticalement */
+    text-align: center;          
+    border-radius: 10px; /* Optionnel pour un meilleur rendu */
+    cursor: pointer;
+    
+}   
+.rainbow-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, 
+    #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.title{
+    margin: 0% ;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.title h1{
+    font-size: 2.5rem;
+    color: #000;
+    margin: 0%;
+    padding: 3%
+}
+
+#img1 {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+.item p {
+    z-index: 0;
+}
