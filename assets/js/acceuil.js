@@ -18,12 +18,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     setTimeout(() => { TotalExplo--; }, 1000);
 
                     let explosion = document.createElement("img");
-                    explosion.src = "./assets/img/explosion.gif"; // Ton GIF ici
+                    explosion.src = "http://localhost:8080/static/img/explosion.gif"; // Ton GIF ici
                     explosion.classList.add("explosion");
 
                     square.appendChild(explosion);
 
-                    let audio = new Audio("./assets/music/boom.mp3");
+                    let audio = new Audio("http://localhost:8080/static/music/boom.mp3");
                     audio.volume = 1;
                     if (audio.paused && !SoundActive) {
                         SoundActive = true;
@@ -97,7 +97,7 @@ window.addEventListener("scroll", () => {
     if (atBottom && !hasFallen) {
         images.forEach(img => {
             img.classList.add("fall");
-            const audio = new Audio("./assets/music/death.mp3");
+            const audio = new Audio("http://localhost:8080/static/music/death.mp3");
             if (audio.paused) {
                 audio.play();
             }
@@ -116,7 +116,7 @@ window.addEventListener("scroll", () => {
                 img.classList.remove("fall");
                 img.classList.add("rise"); // Ajoute l’animation de remontée
 
-                const audio = new Audio("./assets/music/life.mp3");
+                const audio = new Audio("http://localhost:8080/static/music/life.mp3");
                 if (audio.paused) {
                     audio.play();
                 }

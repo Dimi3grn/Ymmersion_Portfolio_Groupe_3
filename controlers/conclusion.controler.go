@@ -6,6 +6,6 @@ import (
 )
 
 // créer une fonction controler qui permet de compléter la fonction route associé au meme template.
-func HomeControler(w http.ResponseWriter, r *http.Request) {
-	templates.ListTemp.ExecuteTemplate(w, "acceuil", nil)
+func ConclusionControler(w http.ResponseWriter, r *http.Request) {
+	templates.ListTemp.ExecuteTemplate(w, "conclusion", nil)
 }
