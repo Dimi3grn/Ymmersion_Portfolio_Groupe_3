@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 body {
     margin: 0;
     padding: 0;
@@ -13,8 +15,6 @@ main{
     flex-direction: column;
     align-items: center ;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 .fixed {
     position: fixed;
@@ -56,6 +56,7 @@ main{
     width: 100%;
     transition: all 0.3s ease-in-out;
     white-space: nowrap;
+    cursor: pointer;
 }
 
 .svgcont img {
@@ -65,6 +66,7 @@ main{
 }
 
 /* Cacher le texte par défaut */
+
 .svgcont span {
     color: black;
     font-size: 1rem;
@@ -89,7 +91,7 @@ main{
     gap: 20px;
     width: 70%;
     flex-direction: column;
-    margin-top: 70px;
+    margin-top: 50px;
 }
 
 .row{
@@ -99,20 +101,6 @@ main{
     margin-bottom: 25px;
 }
 
-.item {
-    background: white;
-    height: 200px;
-    width: 400px;
-    display: flex;
-    justify-content: center;     /* Centre horizontalement */
-    align-items: center;        /* Centre verticalement */
-    text-align: center;          
-    border-radius: 10px; /* Optionnel pour un meilleur rendu */
-    cursor: pointer;
-    
-}  
-
-  
 .rainbow-text {
     font-size: 2.5rem;
     font-weight: bold;
@@ -134,31 +122,178 @@ main{
     margin: 0%;
     padding: 3%
 }
+/* Border rainbow */
+
+@keyframes rainbow {
+    0% { border-color: red; }
+    16% { border-color: orange; }
+    33% { border-color: yellow; }
+    50% { border-color: green; }
+    66% { border-color: blue; }
+    83% { border-color: indigo; }
+    100% { border-color: violet; }
+}
+  
+/* Epreuve 1 */
+
+.epreuve1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
 
 .item1 {
-    background: url("../assets/img/creeper\ fond.png") no-repeat center center/cover;
+    flex-direction: column;
+    background: url("../assets/img/creeper.png");
+    background-size: cover;
     height: 200px;
     width: 400px;
     display: flex;
     text-align: center;          
     border-radius: 10px; /* Optionnel pour un meilleur rendu */
     cursor: pointer;
-     
-} 
-.item1 p {
-    width: 50%;
-    height: 20%;
-    color: #333;
-    background: transparent;
-    padding: 10px;
-    margin: 2%;
-    border-radius: 10px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    font-weight: bold;
+    border: 8px solid red;
+    animation: rainbow 5s linear infinite;
     transition: transform 0.3s ease;
+ 
+} 
+
+.item1:hover {
+    transform: scale(1.1);
 }
 
-.item1 p:hover {
+/* Epreuve 2 */
+
+.epreuve2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.item2 {
+    background: url("../assets/img/casinofond.jpg") no-repeat center center/cover;
+    height: 200px;
+    width: 400px;
+    display: flex;
+    text-align: center;          
+    border-radius: 10px; /* Optionnel pour un meilleur rendu */
+    cursor: pointer;
+    border: 8px solid red;
+    animation: rainbow 5s linear infinite;
+    transition: transform 0.3s ease;
+} 
+
+.item2:hover {
+    transform: scale(1.1);
+}
+
+/* Epreuve 3 */
+
+.epreuve3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.item3 {
+    background: url("../assets/img/hackerfond.jpg") no-repeat center center/cover;
+    height: 200px;
+    width: 400px;
+    display: flex;
+    text-align: center;          
+    border-radius: 10px; /* Optionnel pour un meilleur rendu */
+    cursor: pointer;
+    border: 8px solid red;
+    animation: rainbow 5s linear infinite; 
+    transition: transform 0.3s ease;
+
+} 
+
+.item3:hover{
+    transform: scale(1.1);
+}
+
+/* Epreuve 4 */
+
+.epreuve4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.item4 {
+    background: url("../assets/img/palindrome.png") no-repeat center center/cover;
+    height: 200px;
+    width: 400px;
+    display: flex;
+    text-align: center;          
+    border-radius: 10px; /* Optionnel pour un meilleur rendu */
+    cursor: pointer;
+    border: 8px solid red;
+    animation: rainbow 5s linear infinite;
+    transition: transform 0.3s ease;
+} 
+.item4:hover {
+    transform: scale(1.1);
+}
+
+/* Epreuve 5 */
+
+.epreuve5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.item5 {
+    background: url("../assets/img/Analyse.png") no-repeat center center/cover;
+    height: 200px;
+    width: 400px;
+    display: flex;
+    text-align: center;          
+    border-radius: 10px; /* Optionnel pour un meilleur rendu */
+    cursor: pointer;
+    border: 8px solid red;
+    animation: rainbow 5s linear infinite;
+    transition: transform 0.3s ease;
+} 
+.item5:hover {
+    transform: scale(1.1);
+}
+
+/* Epreuve 6 */
+
+.epreuve6 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.item6 {
+    background: url("../assets/img/Boite.png") no-repeat center center/cover;
+    height: 200px;
+    width: 400px;
+    display: flex;
+    text-align: center;          
+    border-radius: 10px; /* Optionnel pour un meilleur rendu */
+    cursor: pointer;
+    border: 8px solid red;
+    animation: rainbow 5s linear infinite;
+    transition: transform 0.3s ease;
+} 
+
+.item6:hover {
     transform: scale(1.1);
 }
