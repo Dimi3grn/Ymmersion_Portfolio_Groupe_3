@@ -110,7 +110,6 @@ body {
     transition: width 0.3s ease-in-out;
     overflow: hidden;
 }
-
 /* Largeur initiale de la sidebar */
 .SideHeader {
     width: 6vw;
