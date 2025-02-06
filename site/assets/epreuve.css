@@ -1,0 +1,332 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+h1{
+    margin: 0
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.fixed {
+    position: fixed;
+    height: 100vh;
+    width: 4vw;
+    background-color: #AF0000;
+    transition: width 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.sidebar {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.top{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 3vh;
+}
+
+.svgcont {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    white-space: nowrap;
+}
+
+.svgcont img {
+    margin-left: 15px;
+    height: 30px;
+    width: 30px;
+}
+
+/* Cacher le texte par défaut */
+.svgcont span {
+    color: black;
+    font-size: 1rem;
+    margin-left: 10px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Effet au survol */
+.fixed:hover {
+    width: 10vw; /* Augmenté à 10vw */
+}
+
+.fixed:hover .svgcont span {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+main{
+    margin-left: 4vw;
+    width: 96vw;
+    height: 170vh;
+    background: url("./img/dirt.png");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.title{
+    background-color: #6aaf50;
+    margin-top: 4vh;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.flip-container {
+  margin-top: 6vh;
+  cursor: pointer;
+  width: 400px;
+  height: 400px;
+  perspective: 1000px; /* Creates 3D effect */
+}
+
+.flipper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.flipped .flipper {
+  transform: rotateY(-180deg);
+}
+
+.creeper {
+  width: 100%;
+  height: 100%;
+  background-color: #6aaf50;
+  border-radius: 10px;
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  backface-visibility: hidden; /* Hides the back side */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.front {
+  position: absolute;
+}
+
+.back {
+  transform: rotateY(-180deg);
+  background-color: green;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.back h1{
+  color: black;
+  position: inherit;
+  font-size: 40px;
+  top: 25px;
+}
+
+.squareblack{
+  width: 100px;
+  height: 100px;
+  background-color: black;
+}
+
+/* Pixel Elements */
+.pixel {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: black;
+}
+
+/* Eyes */
+.eye-left { top: 80px; left: 80px; }
+.eye-right { top: 80px; right: 80px; }
+
+/* Nose */
+.nose-top { top: 160px; left: 160px; }
+.nose-bottom { top: 240px; left: 240px; }
+
+/* Mouth */
+.mouth-top-left { top: 200px; left: 80px; }
+.mouth-top-right { top: 200px; right: 80px; }
+.mouth-bottom-left { top: 280px; left: 80px; }
+.mouth-bottom-right { top: 280px; right: 80px; }
+
+.container-description {
+    width: 60%;
+    background:linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff); /* Dégradé arc-en-ciel */
+    color: black;
+    top: 80%;
+    margin-top: 20px;
+    padding: 20px; /* Espacement interne */
+    border-radius: 10px; /* Coins arrondis */
+    text-align: center; /* Centrage du texte */
+    font-size: 1.2rem; /* Taille du texte */
+    font-weight: 500;
+    box-shadow:  5px 5px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 50px;
+}
+
+input[type=radio] {
+    display: none;
+  }
+  
+  .card {
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition: transform .4s ease;
+    cursor: pointer;
+    background-color: #6aaf50;
+    border-radius: 15px;
+  }
+  
+  .caroussel {
+    width: 100%;
+    max-width: 800px;
+    max-height: 600px;
+    height: 100%;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;
+  }
+  
+  .cards {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+    user-select: none;
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  #item-1:checked ~ .cards #song-3, #item-2:checked ~ .cards #song-1, #item-3:checked ~ .cards #codecard {
+    transform: translatex(-40%) scale(.8);
+    opacity: .7;
+    z-index: 0;
+  }
+  
+  #item-1:checked ~ .cards #codecard, #item-2:checked ~ .cards #song-3, #item-3:checked ~ .cards #song-1 {
+    transform: translatex(40%) scale(.8);
+    opacity: .7;
+    z-index: 0;
+  }
+  
+  #item-1:checked ~ .cards #song-1, #item-2:checked ~ .cards #codecard, #item-3:checked ~ .cards #song-3 {
+    transform: translatex(0) scale(1);
+    opacity: 1;
+    z-index: 1;
+    
+    img {
+      box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47);
+    }
+  }
+  
+  
+  #item-2:checked ~ .player #test {
+    transform: translateY(0);
+  }
+  
+  #item-2:checked ~ .player #test  {
+    transform: translateY(-40px);
+  }
+  
+  #item-3:checked ~ .player #test  {
+    transform: translateY(-80px);
+  }
+
+.card{
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: top;
+    justify-content: center;
+    text-align: center;
+}
+
+.card h1{
+    margin-top: 16px;
+}
+
+
+.card p{
+    font-size: 22px;
+    margin: 35px;
+}
+
+pre {
+    background: #2d2d2d;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: "Fira Code", monospace;
+    width: 80%;
+    height: 80%;
+  }
+
+  .codecard{
+    cursor: pointer; /* Change le curseur pour indiquer que c'est cliquable */
+    transition: all 0.3s ease; /* Animation douce pour l'agrandissement */
+  }
+
+.expanded{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60vw; /* Occupe toute la largeur de l'écran */
+    height: 75vh; /* Occupe toute la hauteur de l'écran */
+    position: fixed;
+    top: 0;
+    left: -22%;
+    transform: translateX(-50%);
+    z-index: 9999; /* Assure que la fenêtre de code est au-dessus de tout */
+    margin: 0; /* Retirer les marges pour occuper tout l'espace */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Ombre pour l'effet visuel */
+}
+
+.expanded h1{
+  display: none;
+}

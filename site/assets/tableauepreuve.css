@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body{
     display: flex;
     flex-direction: row;
@@ -41,3 +42,80 @@ body{
 .home{
     width: 70%;
 }
+=======
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.fixed {
+    position: fixed;
+    height: 100vh;
+    width: 4vw;
+    background-color: #AF0000;
+    transition: width 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.sidebar {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.top{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 3vh;
+}
+
+.svgcont {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    white-space: nowrap;
+}
+
+.svgcont img {
+    margin-left: 15px;
+    height: 30px;
+    width: 30px;
+}
+
+/* Cacher le texte par défaut */
+.svgcont span {
+    color: black;
+    font-size: 1rem;
+    margin-left: 10px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Effet au survol */
+.fixed:hover {
+    width: 10vw; /* Augmenté à 10vw */
+}
+
+.fixed:hover .svgcont span {
+    opacity: 1;
+    transform: translateX(0);
+}
+>>>>>>> main
