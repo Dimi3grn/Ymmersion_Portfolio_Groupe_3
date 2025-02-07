@@ -163,12 +163,7 @@ main{
   background-size: cover;
 }
 
-.back h1{
-  color: black;
-  position: inherit;
-  font-size: 40px;
-  top: 25px;
-}
+
 
 .container-description {
     width: 60%;
