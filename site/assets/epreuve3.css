@@ -3,6 +3,7 @@ body {
     padding: 0;
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
+    color: white;
 }
 
 h1{
@@ -83,7 +84,7 @@ main{
     margin-left: 4vw;
     width: 96vw;
     height: auto;
-    background: url("./img/dirt.png");
+    background: url("./img/codefond.jpg");
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -91,7 +92,7 @@ main{
 }
 
 .title{
-    background-color: #6aaf50;
+    background-color: #45404a;
     margin-top: 4vh;
     padding: 10px;
     border-radius: 10px;
@@ -210,7 +211,7 @@ input[type=radio] {
     margin: auto;
     transition: transform .4s ease;
     cursor: pointer;
-    background-color: #6aaf50;
+    background-color:#45404a;
     border-radius: 15px;
   }
   
@@ -329,4 +330,11 @@ pre {
 
 .expanded h1{
   display: none;
+}
+
+.password{
+  margin-top: 15vh;
+  margin-bottom: 7vh;
+  width: 50vw;
+
 }
