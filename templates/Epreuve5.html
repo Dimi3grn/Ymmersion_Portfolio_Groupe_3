@@ -1,0 +1,149 @@
+{{define "Epreuve5"}}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epreuve 4</title>
+    <link rel="stylesheet" href="/static/epreuve5.css">
+    <!-- Prism.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
+
+</head>
+<body>
+    <script src="/static/js/epreuve.js"></script>
+    <script src="/static/js/sidebar.js"></script>
+    <div class="fixed">
+        <nav class="sidebar">
+            <div class="top">
+                <div class="svgcont" id="epreuve">
+                    <img src="/static/svg/sword-fill-svgrepo-com.svg" alt="logo">
+                    <span>Epreuves</span>
+                </div>
+                <div class="svgcont" id="classement">
+                    <img src="/static/svg/leaderboard-star-svgrepo-com.svg" alt="">
+                    <span>classement</span>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="svgcont" id="acceuil">
+                    <img src="/static/svg/home-icon-silhouette-svgrepo-com (1).svg" alt="">
+                    <span>Accueil</span>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <main>
+        <div class="title">
+            <h1>EPREUVE 4</h1>
+        </div>
+        <div class="flip-container" onclick="this.classList.toggle('flipped')">
+            <div class="flipper">
+                <!-- Front Side -->
+                <div class="front">    
+                </div>
+                <!-- Back Side -->
+                <div class="front back">
+                    <div class="code">
+                    </div>
+                    <div class="resultat">                   
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-description">
+            <h2>Écrire un programme qui vérifie si un mot ou une phrase (sans espaces) est un palindrome (ex: "radar", "kayak")..</h2>
+        </div> 
+        <div class="caroussel">
+            <input type="radio" name="slider" id="item-1" checked>
+            <input type="radio" name="slider" id="item-2">
+            <input type="radio" name="slider" id="item-3">
+            <div class="cards">
+            <label class="card" for="item-1" id="song-1">
+                <h1>Logique et réfléxion</h1>
+                <p> Normalisation :<br>  
+                    Convertir la chaîne en minuscules (strings.ToLower()) et enlever les espaces (strings.ReplaceAll()), pour garantir une comparaison correcte.<br>
+                    Vérification de palindrome :<br>                    
+                    Comparer chaque caractère en miroir (premier avec dernier, etc.) jusqu'à la moitié de la chaîne. Cela permet d'éviter de l'inverser entièrement, rendant l'algorithme O(n).<br>
+                    Interaction avec l'utilisateur :<br>
+                    Utiliser bufio.Scanner pour gérer les phrases et permettre des entrées continues.<br>
+                    Utiliser "exit" pour quitter proprement le programme.</p>
+            </label>
+            <label class="card codecard" for="item-2" id="codecard">
+                <h1>Code</h1>
+                <pre><code class="language-css">
+package main
+
+import (
+    "bufio"
+    "fmt"
+    "os"
+    "strings"
+)
+
+// Fonction pour vérifier si une chaîne est un palindrome
+func isPalindrome(s string) bool {
+    // Convertir en minuscules et enlever les espaces
+    s = strings.ToLower(strings.ReplaceAll(s, " ", ""))
+
+    // Comparer les caractères en miroir
+    n := len(s)
+    for i := 0; i < n/2; i++ {
+        if s[i] != s[n-1-i] {
+            return false
+        }
+    }
+    return true
+}
+
+func main() {
+    scanner := bufio.NewScanner(os.Stdin)
+
+    fmt.Println("🔄 Bienvenue dans le jeu du Palindrome !")
+    fmt.Println("➡️  Entrez un mot ou une phrase (ou tapez 'exit' pour quitter) :")
+
+    for {
+        fmt.Print("> ")
+        scanner.Scan()
+        input := scanner.Text()
+
+        // Vérifier si l'utilisateur veut quitter
+        if strings.ToLower(input) == "exit" {
+            fmt.Println("👋 Merci d'avoir joué ! À bientôt !")
+            break
+        }
+
+        // Vérifier si le mot est un palindrome
+        if isPalindrome(input) {
+            fmt.Println("✅ C'est un palindrome ! 🎉")
+        } else {
+            fmt.Println("❌ Ce n'est pas un palindrome.")
+        }
+    }
+}
+                    
+                </code></pre>
+                    
+            </label>
+            <label class="card" for="item-3" id="song-3">
+                <h1>Leçons apprises</h1>
+                <p>Normalisation des entrées<br>
+                    Conversion en minuscules avec strings.ToLower().<br>
+                    -Suppression des espaces avec strings.ReplaceAll().<br>
+                    -Utilisation de bufio.Scanner<br>
+                    -Permet de lire des phrases entières (y compris avec espaces).<br>
+                    -Gère les entrées de manière plus fluide que fmt.Scan().<br>
+                    Boucle interactive<br>
+                    -L'utilisateur peut tester plusieurs mots sans relancer le programme.<br>
+                    -exit permet de quitter proprement avec un message convivial.<br>
+                    -Algorithme optimisé<br>
+                    -Vérification O(n) en comparant les caractères opposés.<br>
+                    -Arrêt immédiat si un caractère ne correspond pas.</p>
+            </label>
+          </div>
+        </div>
+    </main>
+</body>
+</html>
+{{end}}

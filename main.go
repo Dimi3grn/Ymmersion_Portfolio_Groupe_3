@@ -1,12 +1,12 @@
 package main
 
 import (
-	"net/http"
-	"log"
+	"portfolio/routes"
+	"portfolio/templates"
 )
 
+// fonction qui charge le code des dossier (ici tempaltes et routes)
 func main() {
-	http.Handle("/", http.FileServer(http.Dir(".")))
-	log.Println("Serveur démarré sur http://localhost:8080")
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	templates.Init()
+	routes.Init()
 }

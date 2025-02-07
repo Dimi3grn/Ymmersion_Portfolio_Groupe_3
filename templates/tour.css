@@ -1,0 +1,16 @@
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    transform: translate(-50%, -50%);
+    animation: rotateSquare 2s linear infinite;
+}
+
+@keyframes rotateSquare {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}

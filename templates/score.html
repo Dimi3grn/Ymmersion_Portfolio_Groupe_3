@@ -1,0 +1,81 @@
+{{define "score"}}
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau des Scores</title>
+    <link rel="stylesheet" href="/static/score.css">
+</head>
+<body>
+    <script src="/static/js/sidebar.js"></script>
+    <div class="fixed">
+        <nav class="sidebar">
+            <div class="top">
+                <div class="svgcont" id="epreuve">
+                    <img src="/static/svg/sword-fill-svgrepo-com.svg" alt="logo">
+                    <span>Epreuves</span>
+                </div>
+                <div class="svgcont" id="classement">
+                    <img src="/static/svg/leaderboard-star-svgrepo-com.svg" alt="">
+                    <span>classement</span>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="svgcont" id="acceuil">
+                    <img src="/static/svg/home-icon-silhouette-svgrepo-com (1).svg" alt="">
+                    <span>Accueil</span>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <main>
+        <div class="title">
+            <h1>Tableau des Scores</h1>
+        </div>
+        <div class="score-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rang</th>
+                        <th>Nom</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="trophée1"></th>
+                        <th scope="jeremie"></th>
+                        <th scope="valide"></th>
+                    </tr>
+                    <tr>
+                        <th scope="trophée2"></th>
+                        <th scope="dimitri"></th>
+                        <th scope="valide"></th>
+                    </tr>
+                    <tr>
+                        <th scope="trophée3"></th>
+                        <th scope="xerly"></th>            
+                        <th scope="refuse"></th>
+                    </tr>
+                    <tr>
+                        <th scope="trophée4"></th>
+                        <th scope="romain"></th>                        
+                        <th scope="valide"></th>
+                    </tr>
+                    <tr>
+                        <th scope="trophée5"></td>
+                        <th scope="etienne"></th>
+                        <th scope="refuse"></th>
+                    </tr>
+                    <tr>
+                        <th scope="trophée6"></td>
+                        <th scope="eddy"></th>
+                        <th scope="refuse"></th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>
+{{end}}

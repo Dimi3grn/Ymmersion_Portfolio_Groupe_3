@@ -1,0 +1,223 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Inter', sans-serif;
+    background-color: #209E20;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    width: 100%;
+    height: 100%;
+}
+
+.fixed {
+    position: fixed;
+    height: 100vh;
+    width: 4vw;
+    background-color: #AF0000;
+    transition: width 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.sidebar {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.top{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 3vh;
+}
+
+.svgcont {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.svgcont img {
+    margin-left: 15px;
+    height: 30px;
+    width: 30px;
+}
+
+/* Cacher le texte par défaut */
+
+.svgcont span {
+    color: black;
+    font-size: 1rem;
+    margin-left: 10px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Effet au survol */
+.fixed:hover {
+    width: 10vw; /* Augmenté à 10vw */
+}
+
+.fixed:hover .svgcont span {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+
+.title {
+    background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff);
+    margin-top: 4vh;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+/* Tableau de score */
+.score-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 100%;
+   
+}
+
+table {
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 50%;
+    height: 100%;
+}
+
+thead {
+    background:linear-gradient(45deg, 
+    #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff);
+    color: white;
+}
+
+thead th {
+    padding: 15px;
+    
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #ddd;
+}
+
+td, th {
+    padding: 12px;
+    border: 1px solid #e60c0c;
+}
+/* Colonne milieu */
+th[scope='jeremie'] {
+  background:url(./img/jeremie1.png)     ;
+  }
+
+th[scope='dimitri'] {
+    background:url(./img/dimitri1.png)     ;
+}
+
+th[scope='xerly'] {
+    background:url(./img/xerly.jpg) no-repeat ;
+    background-position: center;
+    background-size: 250px;
+}
+  
+th[scope='romain'] {
+    background: url(./img/romain1.png) ;
+    background-position: center;
+}
+
+th[scope='etienne'] {
+    background: url(./img/etienne.png) ;
+    background-position: center;
+    background-size: 80%;
+    
+}
+th[scope='eddy'] {
+    background: url(./img/eddy1.png) ;
+   
+    
+}
+
+/* Colonne gauche */
+
+th[scope='trophée1'] {
+    background: url(./img/trophée1.png) ;
+    background-position: center;
+    background-size: 40%;
+}
+
+th[scope='trophée2'] {
+    background: url(./img/trophée2.png) ;
+    background-position: center;
+    background-size: 40%;
+}
+
+th[scope='trophée3'] {
+    background: url(./img/trophée3.png) ;
+    background-position: center;
+    background-size: 40%; 
+}
+
+th[scope='trophée4'] {
+    background: url(./img/trophée4.png) ;
+    background-position: center;
+    background-size: 40%;
+}
+
+th[scope='trophée5'] {
+    background: url(./img/trophée5.png) ;
+    background-position: center;
+    background-size: 40%;
+}
+
+th[scope='trophée6'] {
+    background: url(./img/trophée6.png) ;
+    background-position: center;
+    background-size: 40%;
+}
+
+th[scope='valide'] {
+    background: url(./img/valide.png) no-repeat ;
+    background-size: 50%;
+    background-position: center;
+   
+}
+
+th[scope='refuse'] {
+    background: url(./img/refuse.png) no-repeat;
+    background-position: center;
+    background-size: 50%
+}

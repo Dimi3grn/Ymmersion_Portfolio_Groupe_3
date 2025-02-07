@@ -1,0 +1,78 @@
+{{define "menu"}}
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu des Épreuves</title>
+    <link rel="stylesheet" href="/static/menu.css">
+    <script src="/static/js/menu.js"></script>
+</head>
+<body>
+    <audio id="bgMusic" loop>
+        <source src="/static/music/wii.mp3" type="audio/mpeg">
+    </audio>
+    <script src="/static/js/sidebar.js"></script>
+    <div class="fixed">
+        <nav class="sidebar">
+            <div class="top">
+                <div class="svgcont" id="epreuve">
+                    <img src="/static/svg/sword-fill-svgrepo-com.svg" alt="logo">
+                    <span>Epreuves</span>
+                </div>
+                <div class="svgcont" id="classement">
+                    <img src="/static/svg/leaderboard-star-svgrepo-com.svg" alt="">
+                    <span>classement</span>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="svgcont" id="acceuil">
+                    <img src="/static/svg/home-icon-silhouette-svgrepo-com (1).svg" alt="">
+                    <span>Accueil</span>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <main>
+        <div class="title">
+            <h1><span class="rainbow-text">Menu des Épreuves</span> </h1>
+        </div> 
+        <div class="container">
+            <div class="row">
+                <div class="epreuve1" id="epreuve1">
+                    <p><span class="rainbow-text">Epreuve 1</span></p>  
+                    <div class="item1">
+                    </div>    
+                </div> 
+                <div class="epreuve2" id="epreuve2">
+                    <p><span class="rainbow-text">Epreuve 2</span></p>
+                    <div class="item2">    
+                    </div>
+                </div>  
+                <div class="epreuve3" id="epreuve3">
+                    <p><span class="rainbow-text">Epreuve 3</span></p>
+                    <div class="item3">    
+                    </div>
+                </div>   
+            </div>
+            <div class="row">
+                <div class="epreuve4" id="epreuve4">
+                    <p><span class="rainbow-text">Epreuve 4</span></p>
+                    <div class="item4">    
+                    </div>
+                </div> 
+                <div class="epreuve5" id="epreuve5">
+                    <p><span class="rainbow-text">Epreuve 5</span></p>
+                    <div class="item5">    
+                    </div>
+                </div> 
+                <div class="epreuve6" id="epreuve6">
+                    <p><span class="rainbow-text">Epreuve 6</span></p>
+                    <div class="item6">    
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+{{end}}

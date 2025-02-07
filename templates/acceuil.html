@@ -1,0 +1,112 @@
+{{define "acceuil"}}
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceuil</title>
+    <link rel="stylesheet" href="/static/acceuil.css">
+</head>
+<body>
+    <img src="/static/img/licorne.png" alt="Licorne Magique" class="unicorn">
+    <img src="/static/img/licorne.png" alt="Licorne Magique" class="unicorn">
+    <img src="/static/img/licorne.png" alt="Licorne Magique" class="unicorn">
+    <img src="/static/img/licorne.png" alt="Licorne Magique" class="unicorn">
+    <img src="/static/img/licorne.png" alt="Licorne Magique" class="unicorn">
+    <img src="/static/img/licorne.png" alt="Licorne Magique" class="unicorn">
+
+    <script src="/static/js/acceuil.js"></script>
+    <audio id="bgMusic" loop>
+        <source src="/static/music/music.mp3" type="audio/mpeg">
+    </audio>
+    <script src="/static/js/sidebar.js"></script>
+    <div class="fixed">
+        <nav class="sidebar">
+            <div class="top">
+                <div class="svgcont" id="epreuve">
+                    <img src="/static/svg/sword-fill-svgrepo-com.svg" alt="logo">
+                    <span>Epreuves</span>
+                </div>
+                <div class="svgcont" id="classement">
+                    <img src="/static/svg/leaderboard-star-svgrepo-com.svg" alt="">
+                    <span>classement</span>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="svgcont" id="acceuil">
+                    <img src="/static/svg/home-icon-silhouette-svgrepo-com (1).svg" alt="">
+                    <span>Accueil</span>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="main">
+        <div class="title">
+            <h1>Portfolio épreuves</h1>
+        </div>
+        <div class="description">
+            <h1>Développement d'un Portfolio de Projet - Ymmersion B1 Dev/Cyber</h1>
+            <h2>Présentation du Projet</h2>
+            <p>Dans le cadre de l’Ymmersion 2024/2025, notre équipe est chargée de développer un site portfolio dynamique qui documente les épreuves réalisées au cours de la semaine. </p>
+            <p>Dans le cadre de l’Ymmersion 2024/2025, notre équipe est chargée de développer un site portfolio dynamique qui documente les épreuves réalisées au cours de la semaine.</p>
+            <p> Ce projet a pour objectif de présenter nos travaux, d’illustrer notre progression quotidienne et de mettre en avant notre logique de réflexion et nos résultats.</p>
+            <h2>Fonctionnalités du Portfolio</h2>
+            <p>Le site comprendra plusieurs sections clés :</p>
+            <p> - Page d’accueil : Présentation de l’équipe (noms, rôles, photos), et une navigation intuitive.</p>
+            <p> - Pages des épreuves : Explication des consignes, méthodologie adoptée, code et résultats obtenus.</p>
+            <p> - Page de conclusion : Leçons apprises et compétences aquises suite au projet</p>
+            <p> - Design interactif : Animations et améliorations graphiques progressives.</p>
+            <h2>Contraintes Techniques</h2>
+            <p> - Contraintes Techniques</p>
+            <p> - Langages utilisés : HTML, CSS et Go.</p>
+            <p>Code source structuré, optimisé et commenté.</p>
+        </div>
+        <div class="members">
+            <div class="row1">          
+                <div class="memberA member1">
+                    <div class="tetediv2 boom">
+                        
+                    </div>
+                    <p>Dimitri</p>
+                </div>
+                <div class="memberA member2">
+                    <div class="tetediv boom">
+                        
+                    </div>
+                   
+                    <p>Etienne</p>
+                </div> 
+                <div class="memberA member3">
+                    <div class="tetediv3 boom">
+                        
+                    </div>
+                    <p>Xerly</p>
+                </div>
+            </div>
+            <div class="row2">  
+                <div class="memberB member4">
+                    <div class="tetediv4 boom">
+                        
+                    </div>
+                    <p>Jeremie</p>
+                </div>  
+                <div class="memberB member5">
+                    <div class="tetediv5 boom">
+                        
+                    </div>
+                    <p>Romain</p>
+                </div>
+                <div class="memberB member6">
+                    <div class="tetediv6 boom">
+                        
+                    </div>
+                    <p>Eddy</p>
+                </div>       
+            </div>
+        </div>
+        <div class="conclusion-redirect" id="conclusion">
+            Konklution
+        </div>
+    </div>
+</body>
+</html>
+{{end}}
