@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Epreuve 4</title>
+    <title>Épreuve 5</title>
     <link rel="stylesheet" href="./assets/epreuve5.css">
     <!-- Prism.js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
@@ -35,7 +35,7 @@
     </div>
     <main>
         <div class="title">
-            <h1>EPREUVE 4</h1>
+            <h1>EPREUVE 5</h1>
         </div>
         <div class="flip-container" onclick="this.classList.toggle('flipped')">
             <div class="flipper">
@@ -52,7 +52,7 @@
             </div>
         </div>
         <div class="container-description">
-            <h2>Écrire un programme qui vérifie si un mot ou une phrase (sans espaces) est un palindrome (ex: "radar", "kayak")..</h2>
+            <h2>Le programme analyse un texte pour afficher le nombre de mots, de caractères et le mot le plus long.</h2>
         </div> 
         <div class="caroussel">
             <input type="radio" name="slider" id="item-1" checked>
@@ -61,84 +61,75 @@
             <div class="cards">
             <label class="card" for="item-1" id="song-1">
                 <h1>Logique et réfléxion</h1>
-                <p> Normalisation :<br>  
-                    Convertir la chaîne en minuscules (strings.ToLower()) et enlever les espaces (strings.ReplaceAll()), pour garantir une comparaison correcte.<br>
-                    Vérification de palindrome :<br>                    
-                    Comparer chaque caractère en miroir (premier avec dernier, etc.) jusqu'à la moitié de la chaîne. Cela permet d'éviter de l'inverser entièrement, rendant l'algorithme O(n).<br>
-                    Interaction avec l'utilisateur :<br>
-                    Utiliser bufio.Scanner pour gérer les phrases et permettre des entrées continues.<br>
-                    Utiliser "exit" pour quitter proprement le programme.</p>
+                <p>Ce programme Go est un analyseur de texte interactif qui lit une entrée utilisateur en continu, analyse le texte en comptant le nombre de mots, le nombre de caractères (hors espaces) et identifie le mot le plus long. Il utilise bufio.Scanner pour lire les entrées ligne par ligne et strings.Fields pour découper le texte en mots. Une boucle infinie permet à l'utilisateur d'entrer plusieurs textes jusqu'à ce qu'il tape "exit", ce qui stoppe le programme proprement. La logique repose sur le traitement des chaînes (TrimSpace, ReplaceAll, Fields), une boucle for pour trouver le mot le plus long et une gestion simple des entrées/sorties pour rendre l'outil interactif et intuitif.</p>
             </label>
             <label class="card codecard" for="item-2" id="codecard">
                 <h1>Code</h1>
                 <pre><code class="language-css">
-package main
+                    package main
 
-import (
-    "bufio"
-    "fmt"
-    "os"
-    "strings"
-)
-
-// Fonction pour vérifier si une chaîne est un palindrome
-func isPalindrome(s string) bool {
-    // Convertir en minuscules et enlever les espaces
-    s = strings.ToLower(strings.ReplaceAll(s, " ", ""))
-
-    // Comparer les caractères en miroir
-    n := len(s)
-    for i := 0; i < n/2; i++ {
-        if s[i] != s[n-1-i] {
-            return false
-        }
-    }
-    return true
-}
-
-func main() {
-    scanner := bufio.NewScanner(os.Stdin)
-
-    fmt.Println("🔄 Bienvenue dans le jeu du Palindrome !")
-    fmt.Println("➡️  Entrez un mot ou une phrase (ou tapez 'exit' pour quitter) :")
-
-    for {
-        fmt.Print("> ")
-        scanner.Scan()
-        input := scanner.Text()
-
-        // Vérifier si l'utilisateur veut quitter
-        if strings.ToLower(input) == "exit" {
-            fmt.Println("👋 Merci d'avoir joué ! À bientôt !")
-            break
-        }
-
-        // Vérifier si le mot est un palindrome
-        if isPalindrome(input) {
-            fmt.Println("✅ C'est un palindrome ! 🎉")
-        } else {
-            fmt.Println("❌ Ce n'est pas un palindrome.")
-        }
-    }
-}
+                    import (
+                        "bufio"
+                        "fmt"
+                        "os"
+                        "strings"
+                    )
+                    
+                    // Fonction pour analyser le texte
+                    func analyzeText(text string) (int, int, string) {
+                        // Supprimer les espaces superflus
+                        text = strings.TrimSpace(text)
+                    
+                        // Découper en mots
+                        words := strings.Fields(text)
+                        wordCount := len(words)
+                        charCount := len(strings.ReplaceAll(text, " ", "")) // Ne pas compter les espaces
+                    
+                        // Trouver le mot le plus long
+                        longestWord := ""
+                        for _, word := range words {
+                            if len(word) > len(longestWord) {
+                                longestWord = word
+                            }
+                        }
+                    
+                        return wordCount, charCount, longestWord
+                    }
+                    
+                    func main() {
+                        scanner := bufio.NewScanner(os.Stdin)
+                    
+                        fmt.Println("📊 Analyseur de Texte")
+                        fmt.Println("➡️  Entrez un texte (ou tapez 'exit' pour quitter) :")
+                    
+                        for {
+                            fmt.Print("> ")
+                            scanner.Scan()
+                            input := scanner.Text()
+                    
+                            // Vérifier si l'utilisateur veut quitter
+                            if strings.ToLower(input) == "exit" {
+                                fmt.Println("👋 Merci d'avoir utilisé l'analyseur ! À bientôt !")
+                                break
+                            }
+                    
+                            // Analyser le texte
+                            wordCount, charCount, longestWord := analyzeText(input)
+                    
+                            // Affichage des résultats
+                            fmt.Println("\n📊 Résultats de l'analyse :")
+                            fmt.Printf("📝 Nombre de mots : %d\n", wordCount)
+                            fmt.Printf("🔢 Nombre de caractères (sans espaces) : %d\n", charCount)
+                            fmt.Printf("🏆 Mot le plus long : \"%s\"\n\n", longestWord)
+                        }
+                    }
                     
                 </code></pre>
                     
             </label>
             <label class="card" for="item-3" id="song-3">
                 <h1>Leçons apprises</h1>
-                <p>Normalisation des entrées<br>
-                    Conversion en minuscules avec strings.ToLower().<br>
-                    -Suppression des espaces avec strings.ReplaceAll().<br>
-                    -Utilisation de bufio.Scanner<br>
-                    -Permet de lire des phrases entières (y compris avec espaces).<br>
-                    -Gère les entrées de manière plus fluide que fmt.Scan().<br>
-                    Boucle interactive<br>
-                    -L'utilisateur peut tester plusieurs mots sans relancer le programme.<br>
-                    -exit permet de quitter proprement avec un message convivial.<br>
-                    -Algorithme optimisé<br>
-                    -Vérification O(n) en comparant les caractères opposés.<br>
-                    -Arrêt immédiat si un caractère ne correspond pas.</p>
+                <p>Ce programme enseigne des concepts fondamentaux en programmation Go, notamment la gestion des entrées utilisateur avec bufio.Scanner, la manipulation efficace des chaînes de caractères pour nettoyer et analyser un texte, ainsi que l'utilisation des boucles et conditions pour structurer un programme interactif. Il met en avant l'importance de parcourir des listes avec range pour extraire des informations spécifiques, comme le mot le plus long, et montre comment organiser le code de manière modulaire avec une fonction dédiée à l'analyse. De plus, il illustre la gestion d'une boucle infinie contrôlée, permettant une interaction continue jusqu'à une condition d'arrêt. Plus largement, ce programme souligne l'importance de la clarté du code, de la séparation des responsabilités et de la conception d’une interface utilisateur fluide et intuitive.</p>
             </label>
           </div>
         </div>
