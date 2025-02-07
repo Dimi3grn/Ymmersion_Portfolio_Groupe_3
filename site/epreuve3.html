@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/epreuve3.css">
+
+    <!-- Prism.js CSS pour la coloration syntaxique -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet"/>
+
+    <!-- Prism.js JS pour appliquer la coloration -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-go.min.js"></script>
+
+</head>
+<body>
+    <script src="./assets/js/epreuve.js"></script>
+    <div class="fixed">
+        <nav class="sidebar">
+            <div class="top">
+                <div class="svgcont">
+                    <img src="./assets/svg/sword-fill-svgrepo-com.svg" alt="logo">
+                    <span>Epreuves</span>
+                </div>
+                <div class="svgcont">
+                    <img src="./assets/svg/leaderboard-star-svgrepo-com.svg" alt="">
+                    <span>classement</span>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="svgcont">
+                    <img src="./assets/svg/home-icon-silhouette-svgrepo-com (1).svg" alt="">
+                    <span>Accueil</span>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <main>
+        <div class="title">
+            <h1>EPREUVE 3</h1>
+        </div>
+        <div class="password">
+                <img src="./assets/img/passwordgen.png" alt="">
+                
+        </div>
+        <div class="container-description">
+            <h2>Créer un programme qui génère un mot de passe aléatoire avec :</h2>
+            <h2>8 à 16 caractères</h2>
+            <h2>Majuscules, minuscules, chiffres, symboles</h2>
+                
+        </div> 
+        <div class="caroussel">
+            <input type="radio" name="slider" id="item-1" checked>
+            <input type="radio" name="slider" id="item-2">
+            <input type="radio" name="slider" id="item-3">
+            <div class="cards">
+            <label class="card" for="item-1" id="song-1">
+                <h1>Logique et réfléxion</h1>
+                <p> Pour générer un mot de passe aléatoire, nous avons défini les critères de longueur (8 à 16 caractères) et d’inclusion de majuscules, minuscules, chiffres et symboles. Le programme utilise des fonctions aléatoires pour sélectionner un caractère de chaque catégorie, puis assemble le mot de passe. On s’assure également que chaque type de caractère soit bien présent pour garantir la sécurité du mot de passe.</p>
+            </label>
+            <label class="card codecard" for="item-2" id="codecard">
+                <h1>Code</h1>
+                <pre><code class="language-go">
+package main
+
+import (
+	"crypto/rand"
+	"fmt"
+	"math/big"
+)
+
+// Caractères possibles pour le mot de passe
+const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+[]{}<>?/"
+
+// Fonction pour générer un mot de passe aléatoire
+func generatePassword(length int) (string, error) {
+	if length < 8 {
+		return "", fmt.Errorf("la longueur du mot de passe doit être d'au moins 8 caractères")
+	}
+
+	password := make([]byte, length)
+	for i := range password {
+		randIndex, err := rand.Int(rand.Reader, big.NewInt(int64(len(charset))))
+		if err != nil {
+			return "", err
+		}
+		password[i] = charset[randIndex.Int64()]
+	}
+
+	return string(password), nil
+}
+
+func main() {
+	var length int
+
+	fmt.Println("🔐 Générateur de mot de passe sécurisé")
+	fmt.Print("➡️  Entrez la longueur du mot de passe (min 8, max 16) : ")
+	fmt.Scan(&length)
+
+	if length < 8 || length > 16 {
+		fmt.Println("❌ Longueur invalide ! Utilisation d'une valeur par défaut : 12 caractères.")
+		length = 12
+	}
+
+	password, err := generatePassword(length)
+	if err != nil {
+		fmt.Println("Erreur :", err)
+		return
+	}
+
+	fmt.Println("✅ Mot de passe généré :", password)
+}
+
+                </code></pre>
+                    
+            </label>
+            <label class="card" for="item-3" id="song-3">
+                <h1>Leçons apprises</h1>
+                <p>
+                    Cette tâche nous a appris l'importance de bien gérer les différents types de caractères pour garantir un mot de passe sécurisé. Nous avons compris qu'il est crucial de vérifier que chaque critère (majuscules, minuscules, chiffres, symboles) est bien respecté tout en générant aléatoirement les caractères. Cela nous a aussi permis de réaliser qu'une bonne organisation du code est essentielle pour s'assurer que le mot de passe respecte toutes les exigences sans erreurs.</p>
+            </label>
+          </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Go avec Prism.js</title>
+
+    <!-- Prism.js CSS pour la coloration syntaxique -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet"/>
+
+    <!-- Prism.js JS pour appliquer la coloration -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-go.min.js"></script>
+
+    <style>
+        .code-container {
+            background-color: #2d2d2d;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: Consolas, monospace;
+            overflow-x: auto;
+            color: #f8f8f2; /* Couleur du texte pour contraste */
+        }
+        pre {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="code-container">
+        <pre><code class="language-go">
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello, world!")
+}
+        </code></pre>
+    </div>
+
+</body>
+</html>

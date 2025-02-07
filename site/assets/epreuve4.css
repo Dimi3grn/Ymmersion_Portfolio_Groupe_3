@@ -83,15 +83,17 @@ main{
     margin-left: 4vw;
     width: 96vw;
     height: auto;
-    background: url("./img/dirt.png");
+    background: url("./img/epreuve4.png") no-repeat center center fixed;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
 }
 
+
 .title{
-    background-color: #6aaf50;
+    background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff);
     margin-top: 4vh;
     padding: 10px;
     border-radius: 10px;
@@ -101,8 +103,8 @@ main{
 .flip-container {
   margin-top: 6vh;
   cursor: pointer;
-  width: 400px;
-  height: 400px;
+  width: 1500px;
+  height: 700px;
   perspective: 1000px; /* Creates 3D effect */
 }
 
@@ -117,70 +119,51 @@ main{
 .flipped .flipper {
   transform: rotateY(-180deg);
 }
-
-.creeper {
+/* Front Side*/
+.front {
   width: 100%;
   height: 100%;
-  background-color: #6aaf50;
+  background : url("./img/correction4.png");
+  background-size: cover;
   border-radius: 10px;
   box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
   position: absolute;
   backface-visibility: hidden; /* Hides the back side */
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center;  
 }
 
 .front {
   position: absolute;
 }
-
+/* Back Side*/
 .back {
   transform: rotateY(-180deg);
-  background-color: green;
   color: white;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: 24px;
   font-weight: bold;
 }
 
-.back h1{
-  color: black;
-  position: inherit;
-  font-size: 40px;
-  top: 25px;
+.code {
+  width: 50%;
+  height: 100%;
+  background: url("./img/code.png");
+  background-size: cover;
 }
 
-.squareblack{
-  width: 100px;
-  height: 100px;
-  background-color: black;
+.resultat {
+  width: 50%;
+  height: 100%;
+  background: url("./img/resultat.png");
+  background-size: cover;
 }
 
-/* Pixel Elements */
-.pixel {
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  background-color: black;
-}
 
-/* Eyes */
-.eye-left { top: 80px; left: 80px; }
-.eye-right { top: 80px; right: 80px; }
-
-/* Nose */
-.nose-top { top: 160px; left: 160px; }
-.nose-bottom { top: 240px; left: 240px; }
-
-/* Mouth */
-.mouth-top-left { top: 200px; left: 80px; }
-.mouth-top-right { top: 200px; right: 80px; }
-.mouth-bottom-left { top: 280px; left: 80px; }
-.mouth-bottom-right { top: 280px; right: 80px; }
 
 .container-description {
     width: 60%;
@@ -224,7 +207,7 @@ input[type=radio] {
     flex-direction: column;
     align-items: center;
     margin-top: 70px;
-    margin-bottom: 22vh;
+    margin-bottom: 50px;
   }
   
   .cards {
@@ -292,7 +275,7 @@ input[type=radio] {
 
 
 .card p{
-    font-size: 22px;
+    font-size: 20px;
     margin: 35px;
 }
 
